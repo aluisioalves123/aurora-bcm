@@ -5,6 +5,7 @@ Release/
 *~
 *.o
 *.d
+*.exe
 *.bin
 *.elf
 *.hex
