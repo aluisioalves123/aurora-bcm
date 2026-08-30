@@ -4,6 +4,8 @@
 #include "hal/lamps.h"
 #include "hal/service_light.h"
 #include "hal/systick.h"
+#include "hal/uart.h"
+#include "logic/message.h"
 #include "logic/service_light.h"
 #include "logic/turn_signal.h"
 
@@ -19,6 +21,9 @@ int main(void) {
   buttons_setup();
   service_light_setup();
   systick_setup();
+  uart_setup();
+
+  print_serial("Aurora BCM - console de diagnostico\r\n");
 
   uint64_t last_scan = get_ticks();
   uint64_t last_blink = 0;
@@ -37,12 +42,28 @@ int main(void) {
     .hazard_button_pressed            = false,
     .service_light_button_pressed     = false
   };
+  message_t message = {
+    .message  = { 0 },
+    .length   = 0,
+    .complete = false
+  };
   signal_state_t signal_state = SIGNAL_OFF;
   service_light_state_t service_light_state = SERVICE_LIGHT_OFF;
   leds_should_blink_t leds_should_blink = which_leds_blink(signal_state);
 
   while (1) {
     uint64_t now = get_ticks();
+
+    // fora do portao de 1 ms de proposito: a 115200 chega um byte a cada
+    // ~87 us, e cada chamada consome no maximo um
+    // o main le o byte no hal e entrega para a logica decidir
+    message = check_for_messages(message, read_serial());
+
+    if (message.complete) {
+      // eco: so para dar o que ver na tela enquanto nao existe parser
+      print_serial(message.message);
+      print_serial("\r\n");
+    }
 
     if (now != last_scan) { // entra aqui a cada 1 ms
       last_scan = now;

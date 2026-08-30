@@ -59,8 +59,11 @@ OBJS		+= $(SRC_DIR)/hal/systick.o
 OBJS		+= $(SRC_DIR)/hal/buttons.o
 OBJS		+= $(SRC_DIR)/hal/lamps.o
 OBJS		+= $(SRC_DIR)/hal/service_light.o
+OBJS		+= $(SRC_DIR)/hal/uart.o
 OBJS		+= $(SRC_DIR)/logic/turn_signal.o
 OBJS		+= $(SRC_DIR)/logic/service_light.o
+OBJS		+= $(SRC_DIR)/logic/ring_buffer.o
+OBJS		+= $(SRC_DIR)/logic/message.o
 
 ###############################################################################
 # C flags
