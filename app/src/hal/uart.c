@@ -5,6 +5,8 @@
 
 #include "board.h"
 #include "hal/uart.h"
+#include "hal/systick.h"
+#include "logic/fault_table.h"
 #include "logic/ring_buffer.h"
 
 // byte que chegou com o buffer cheio e nao coube. volatile porque quem
@@ -73,6 +75,7 @@ void usart2_isr(void) {
     // interrupcao voltaria a disparar sem parar, no mesmo byte
     if (!ring_buffer_put(&rx_buffer, (uint8_t)usart_recv(CONSOLE_UART))) {
       rx_lost_bytes++;
+      fault_report(FAULT_RX_BYTE_LOST, get_ticks());
     }
   }
 
@@ -98,6 +101,7 @@ void print_serial(const char *frase) {
   while (frase[i] != '\0') {
     if(!ring_buffer_put(&tx_buffer, (uint8_t)frase[i])) {
       tx_lost_bytes++;
+      fault_report(FAULT_TX_BYTE_LOST, get_ticks());
     }
     i++;
   }

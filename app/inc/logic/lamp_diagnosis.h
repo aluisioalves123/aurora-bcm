@@ -2,8 +2,15 @@
 #ifndef INC_LOGIC_LAMP_DIANOSIS_H
 #define INC_LOGIC_LAMP_DIANOSIS_H
 
-// o valor da corrente retornada pelo dac com o led desligado foi de 0.003mA, portanto esse valor é apenas uma margem de segurança
-#define LAMP_OPEN_THRESHOLD_MICROAMPERES 10
+// Ancorado na corrente nominal, nao no ruido. Medido na bancada: a lampada
+// boa e acesa da 477 contagens de ADC, que a cadeia converte em ~1163 uA.
+// Com a lampada fora, a leitura passeia entre 0 e 15 uA porque o no fica
+// solto, e 10 uA caia dentro desse passeio: o diagnostico alternava sozinho
+// entre OK e OPEN.
+//
+// 500 uA e ~43% do nominal: 33x acima do teto do ruido e 2,3x abaixo da
+// lampada boa. Se a carga desta saida mudar, este numero muda junto.
+#define LAMP_OPEN_THRESHOLD_MICROAMPERES 500
 
 typedef enum {
   LAMP_OK,

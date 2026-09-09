@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define BUFFER_SIZE 128
+#define BUFFER_SIZE 512
 
 typedef struct {
   bool success;
