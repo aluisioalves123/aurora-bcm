@@ -30,8 +30,8 @@ estilo — é consequência direta de um requisito.
 | 02 | Piscar na frequência certa | `F1` | ✅ |
 | 03 | Alavanca de seta e pisca-alerta | `F2` `R4` | ✅ |
 | 04 | Faróis com brilho e rampa | `F3` | ✅ |
-| 05 | Console de diagnóstico | `F8` | ⬜ |
-| 06 | Medir bateria e lâmpada queimada | `F5` `F6` | ⬜ |
+| 05 | Console de diagnóstico | `F8` | ✅ |
+| 06 | Medir bateria e lâmpada queimada | `F5` `F6` | 🟡 |
 | 07 | Falhas registradas | `R5` | ⬜ |
 | 08 | Sobreviver ao mundo real | `R2` `R3` | ⬜ |
 | 09 | Configuração não volátil | `F9` | ⬜ |
@@ -40,9 +40,15 @@ estilo — é consequência direta de um requisito.
 | 12 | Testes e integração contínua | — | ⬜ |
 | 13 | A placa da Aurora | — | ⬜ |
 
+🟡 = em andamento. Da etapa 06 já existem a leitura do ADC e a conversão para
+volts e miliampères; falta o diagnóstico de lâmpada aberta e o modo de proteção
+por bateria fraca.
+
 Falta ainda, das etapas já entregues: a alavanca de três posições ainda é botão,
-a entrada é por varredura e não por interrupção `EXTI`, e a frequência do pisca
-não foi medida com analisador lógico — só conferida a olho.
+a entrada é por varredura e não por interrupção `EXTI`, a frequência do pisca não
+foi medida com analisador lógico — só conferida a olho — e a leitura do ADC ainda
+espera o fim da conversão num laço, que é justamente o tipo de espera que a `R4`
+proíbe.
 
 ## Hardware e ferramentas
 
@@ -64,13 +70,26 @@ caminhos estão no [CLAUDE.md](CLAUDE.md).
 app/
 ├── inc/
 │   ├── board.h              mapa do hardware: o único arquivo com pinos
-│   ├── hal/                 systick  buttons  lamps  service_light
-│   └── logic/               turn_signal  service_light
+│   ├── version.h            versão do firmware, reportada pelo console
+│   ├── app/                 terminal
+│   ├── hal/                 systick  buttons  lamps  service_light  uart  adc
+│   └── logic/               turn_signal  service_light  buttons  ring_buffer
+│                            message  battery_millivolts  shunt_current
 └── src/
     ├── main.c               a casca: setup e o laço
+    ├── app/                 decide o que fazer com um comando já montado
     ├── hal/                 fala com o hardware
     └── logic/               só decide, funções puras
+
+estudos/                     peças de C escritas no PC antes de virarem firmware
+├── ring_buffer.c            o buffer circular, escrito à mão
+└── test_ring_buffer.c       14 asserções, rodam no PC, exit 1 se alguma falha
 ```
+
+`logic/` não conhece hardware — nem por header. Quem lê o pino é o `hal/`, quem
+decide é o `logic/`, e o `main.c` liga os dois: `next_debounce(debounce,
+read_buttons())`. A camada `app/` fica acima das duas e cuida do que é política
+de produto, como a tabela de comandos do console.
 
 O `main.c` não inclui `board.h`: ele não sabe que existe PA5 nem pull-up. Quando
 a etapa 13 trocar a fiação por uma PCB, só o `board.h` muda.
@@ -108,9 +127,33 @@ outra.
 | `SIGNAL_LEFT` | pisca | aceso |
 | `SIGNAL_HAZARD` | pisca | pisca |
 
-O farol usa TIM2 canal 3 no PB10 (AF1), `PSC = 224` e `ARR = 399` — 2 kHz de PWM
+O farol usa TIM2 canal 3 no PB10 (AF1), `PSC = 224` e `ARR = 399` — 1 kHz de PWM
 a 180 MHz. A cada systick o `CCR3` anda um passo, então percorrer os 400 níveis
 leva exatamente os 400 ms que a `F3` pede, nos dois sentidos.
+
+### Console de diagnóstico
+
+Pela mesma USB da gravação, a 115200 8N1, sem hardware extra. A recepção é por
+interrupção: cada byte cai num buffer circular, o laço principal tira um por vez
+e monta a frase, e a mensagem só sobe quando chega `\r` ou `\n` — nada disso
+espera por nada. A transmissão também é por interrupção: `print_serial`
+enfileira e volta na hora, independente do tamanho do texto.
+
+| Comando | O que responde |
+|---|---|
+| `/help` | a lista de comandos |
+| `/hello` | `hello world` |
+| `/status` | versão, uptime, estado da seta, nível do farol, bytes perdidos no RX e no TX |
+| `/adc_val` | leitura crua do canal do shunt |
+| `/battery_val` | tensão da bateria, em volts |
+| `/shunt_current` | corrente pelo shunt, em miliampères |
+
+Byte que chega com o buffer cheio não some calado: vira contador, e o `/status`
+mostra. Perder pode acontecer; perder em silêncio, não.
+
+O buffer circular foi escrito à mão no PC, antes de entrar no firmware, com uma
+suíte de 14 asserções em `estudos/` que roda em segundos e devolve código de
+saída — o formato que a etapa 12 vai pedir da integração contínua.
 
 ## Relação com o curso
 
