@@ -14,34 +14,34 @@
 #include "logic/ring_buffer.h"
 
 bool ring_buffer_put(ring_buffer_t *buffer, uint8_t byte) {
-    if ((buffer->head + 1) % BUFFER_SIZE == buffer->tail) {
-        return false;
+  if ((buffer->head + 1) % BUFFER_SIZE == buffer->tail) {
+    return false;
+  } else {
+    buffer->data[buffer->head] = byte;
+    if ((buffer->head + 1) % BUFFER_SIZE == 0) {
+      buffer->head = 0;
     } else {
-        buffer->data[buffer->head] = byte;
-        if ((buffer->head + 1) % BUFFER_SIZE == 0) {
-            buffer->head = 0;
-        } else {
-            buffer->head++;
-        }
-
-        return true;
+      buffer->head++;
     }
+
+    return true;
+  }
 }
 
 read_result_t ring_buffer_get(ring_buffer_t *buffer) {
-    read_result_t read = {
-        .success = false,
-        .value = 0,
-    };
-    if (buffer->head != buffer->tail) {
-        read.value = buffer->data[buffer->tail];
-        read.success = true;
-        if ((buffer->tail + 1) % BUFFER_SIZE == 0 && buffer->tail != 0) {
-            buffer->tail = 0;
-        } else {
-            buffer->tail++;
-        }
+  read_result_t read = {
+    .success = false,
+    .value = 0,
+  };
+  if (buffer->head != buffer->tail) {
+    read.value = buffer->data[buffer->tail];
+    read.success = true;
+    if ((buffer->tail + 1) % BUFFER_SIZE == 0 && buffer->tail != 0) {
+      buffer->tail = 0;
+    } else {
+      buffer->tail++;
     }
+  }
 
-    return read;
+  return read;
 }
