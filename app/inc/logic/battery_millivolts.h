@@ -1,5 +1,5 @@
-#ifndef LOGIC_BATTERY_VOLTAGE_H
-#define LOGIC_BATTERY_VOLTAGE_H
+#ifndef INC_LOGIC_BATTERY_VOLTAGE_H
+#define INC_LOGIC_BATTERY_VOLTAGE_H
 
 #include <stdint.h>
 
