@@ -11,6 +11,11 @@
 #include "logic/battery_millivolts.h"
 #include "logic/shunt_current.h"
 #include "logic/lamp_diagnosis.h"
+#include "hal/lm75.h"
+#include "logic/temperature.h"
+#include "app/diagnostics.h"
+#include "logic/fault_table.h"
+#include "logic/fault_table.h"
 
 // um comando por funcao. o handle_command la embaixo so escolhe qual chamar,
 // e cada uma cuida da propria resposta.
@@ -20,7 +25,19 @@ static void command_hello(void) {
 }
 
 static void command_help(void) {
-  print_serial("/hello = hello world\r\n/status = status da placa e versao");
+  print_serial(
+      "comandos disponiveis:\r\n"
+      "  /hello           hello world\r\n"
+      "  /help            esta lista\r\n"
+      "  /status          estado geral da placa\r\n"
+      "  /adc_val         leitura crua do canal do shunt\r\n"
+      "  /battery_val     tensao da bateria, em volts\r\n"
+      "  /shunt_current   corrente pelo shunt, em miliamperes\r\n"
+      "  /lamp_status     diagnostico da lampada da seta direita\r\n"
+      "  /temperature_raw valor cru do LM75, decimal e hexadecimal\r\n"
+      "  /temperature     temperatura em graus Celsius\r\n"
+      "  /fault_list      tipos de falha que podem ser consultados\r\n"
+      "  /fault <tipo>    estado de uma falha: ativa, ocorrencias e quando\r\n");
 }
 
 static void command_status(signal_state_t signal_state) {
@@ -31,11 +48,30 @@ static void command_status(signal_state_t signal_state) {
   uint32_t tx_lost = read_tx_lost_bytes();
 
   uint32_t battery_value = battery_millivolts(adc_read(BATTERY_ADC_CHANNEL), 1000, 330);
+
+  battery_diagnosis_update(battery_value);
   uint32_t battery_value_int_part = battery_value / 1000;
   uint32_t battery_value_decimal_part = battery_value % 1000;
 
-  uint32_t lamp_shunt_current = shunt_current(adc_read(SHUNT_ADC_CHANNEL), 330);
-  uint16_t lamp_gpio_status = gpio_get(LEDS_PORT, TURN_SIGNAL_RIGHT_LED_PIN);
+  lamp_diagnosis_t lamp = lamp_diagnosis_update();
+
+  // a temperatura vira texto antes: sensor mudo nao pode furar a linha toda,
+  // o resto do status continua valendo
+  char temperature_text[24];
+  temperature_read_t reading = temperature_read();
+
+  temperature_diagnosis_update(reading);
+
+  if (reading.success) {
+    int32_t millicelsius = temperature((int16_t)reading.value);
+    const char *sinal = (millicelsius < 0) ? "-" : "";
+    int32_t absoluto = (millicelsius < 0) ? -millicelsius : millicelsius;
+
+    snprintf(temperature_text, sizeof(temperature_text), "%s%ld.%03ld C",
+        sinal, (long)(absoluto / 1000), (long)(absoluto % 1000));
+  } else {
+    snprintf(temperature_text, sizeof(temperature_text), "sem resposta");
+  }
 
   snprintf(status, sizeof(status),
       "Aurora BCM v%s\r\n"
@@ -44,15 +80,17 @@ static void command_status(signal_state_t signal_state) {
       "lampada direita: %s\r\n"
       "farol: %lu/399\r\n"
       "bateria: %lu.%03lu V\r\n"
+      "temperatura: %s\r\n"
       "rx perdidos: %lu\r\n"
       "tx perdidos: %lu\r\n",
       FIRMWARE_VERSION,
       (unsigned long)uptime_seconds,
       signal_state_name(signal_state),
-      lamp_diagnosis_name(lamp_diagnosis(lamp_shunt_current, lamp_gpio_status)),
+      lamp_diagnosis_name(lamp),
       (unsigned long)service_light,
       (unsigned long)battery_value_int_part,
       (unsigned long)battery_value_decimal_part,
+      temperature_text,
       (unsigned long)rx_lost,
       (unsigned long)tx_lost);
 
@@ -74,6 +112,8 @@ static void command_battery_val(void) {
 
   uint32_t adc_value = adc_read(BATTERY_ADC_CHANNEL);
   uint32_t battery_value = battery_millivolts(adc_value, 1000, 330);
+
+  battery_diagnosis_update(battery_value);
 
   uint32_t battery_value_int_part = battery_value / 1000;
   uint32_t battery_value_decimal_part = battery_value % 1000;
@@ -104,19 +144,96 @@ static void command_shunt_current(void) {
 }
 
 static void command_lamp_status(void) {
-  uint32_t adc_value = adc_read(SHUNT_ADC_CHANNEL);
-  uint32_t shunt_current_value = shunt_current(adc_value, 330);
-  uint16_t lamp_gpio_status = gpio_get(LEDS_PORT, TURN_SIGNAL_RIGHT_LED_PIN);
+  print_serial(lamp_diagnosis_name(lamp_diagnosis_update()));
+  print_serial("\r\n");
+}
 
-  char lamp_gpio_status_string[40];
-  snprintf(lamp_gpio_status_string, sizeof(lamp_gpio_status_string), "%lu\r\n", (unsigned long)lamp_gpio_status);
-  print_serial(lamp_gpio_status_string);
+static void command_temperature_raw(void) {
+  char temperature_val[48];
+  temperature_read_t reading = temperature_read();
 
-  char shunt_current_value_string[40];
-  snprintf(shunt_current_value_string, sizeof(shunt_current_value_string), "%lu\r\n", (unsigned long)shunt_current_value);
-  print_serial(shunt_current_value_string);
+  temperature_diagnosis_update(reading);
 
-  print_serial(lamp_diagnosis_name(lamp_diagnosis(shunt_current_value, lamp_gpio_status)));
+  if (!reading.success) {
+    print_serial("temperature raw: sensor nao respondeu\r\n");
+    return;
+  }
+
+  // cru, em decimal e em hexadecimal: o hex deixa ver os dois bytes
+  // separados, que e o que interessa para conferir o deslocamento
+  snprintf(temperature_val, sizeof(temperature_val),
+      "temperature raw: %lu (0x%04lX)\r\n",
+      (unsigned long)reading.value,
+      (unsigned long)reading.value);
+
+  print_serial(temperature_val);
+}
+
+static void command_temperature(void) {
+  char temperature_string[48];
+  temperature_read_t reading = temperature_read();
+
+  temperature_diagnosis_update(reading);
+
+  if (!reading.success) {
+    print_serial("temperature: sensor nao respondeu\r\n");
+    return;
+  }
+
+  int32_t millicelsius = temperature((int16_t)reading.value);
+
+  // o sinal sai separado: com valor negativo, o resto da divisao tambem vem
+  // negativo, e "%ld.%03ld" imprimiria algo como -5.-250
+  const char *sinal = (millicelsius < 0) ? "-" : "";
+  int32_t absoluto = (millicelsius < 0) ? -millicelsius : millicelsius;
+
+  snprintf(temperature_string, sizeof(temperature_string),
+      "temperature: %s%ld.%03ld C\r\n",
+      sinal,
+      (long)(absoluto / 1000),
+      (long)(absoluto % 1000));
+
+  print_serial(temperature_string);
+}
+
+static void command_fault_list(void) {
+  char linha[64];
+  int i;
+
+  print_serial("tipos de falha que podem ser consultados:\r\n");
+
+  for (i = 0; i < FAULT_COUNT; i++) {
+    snprintf(linha, sizeof(linha), "  %s\r\n", fault_code_name((fault_code_t)i));
+    print_serial(linha);
+  }
+
+  print_serial("use /fault <tipo> para ver o estado de um deles\r\n");
+}
+
+static void command_fault(const char *tipo) {
+  char linha[128];
+  int i;
+
+  for (i = 0; i < FAULT_COUNT; i++) {
+    if (strcmp(tipo, fault_code_name((fault_code_t)i)) == 0) {
+      fault_entry_t entrada = fault_get((fault_code_t)i);
+
+      snprintf(linha, sizeof(linha),
+          "%s\r\n"
+          "  ativa: %s\r\n"
+          "  ocorrencias: %lu\r\n"
+          "  vista pela ultima vez em: %lu ms\r\n",
+          fault_code_name((fault_code_t)i),
+          entrada.active ? "sim" : "nao",
+          (unsigned long)entrada.count,
+          (unsigned long)entrada.last_seen_at);
+
+      print_serial(linha);
+      return;
+    }
+  }
+
+  print_serial("tipo de falha desconhecido, veja a lista com /fault_list\r\n");
 }
 
 static void command_unknown(void) {
@@ -138,6 +255,14 @@ void handle_command(const char* prompt, signal_state_t signal_state) {
     command_shunt_current();
   } else if (strcmp(prompt, "/lamp_status") == 0) {
     command_lamp_status();
+  } else if (strcmp(prompt, "/temperature_raw") == 0) {
+    command_temperature_raw();
+  } else if (strcmp(prompt, "/temperature") == 0) {
+    command_temperature();
+  } else if (strcmp(prompt, "/fault_list") == 0) {
+    command_fault_list();
+  } else if (strncmp(prompt, "/fault ", 7) == 0) {
+    command_fault(prompt + 7);
   } else {
     command_unknown();
   }

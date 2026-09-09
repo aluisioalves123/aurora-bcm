@@ -45,4 +45,10 @@
 #define SHUNT_VOLTAGE_PIN             (GPIO1)
 #define SHUNT_ADC_CHANNEL             (ADC_CHANNEL1)
 
+// lm75 temperature sensor
+#define LM75_SCL_PORT                     (GPIOB)
+#define LM75_SCL_PIN                      (GPIO8)
+#define LM75_SDA_PORT                     (GPIOB)
+#define LM75_SDA_PIN                      (GPIO9)
+
 #endif // INC_BOARD_H

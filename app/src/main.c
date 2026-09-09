@@ -10,6 +10,7 @@
 #include "logic/turn_signal.h"
 #include "app/terminal.h"
 #include "hal/adc.h"
+#include "hal/i2c.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -25,6 +26,7 @@ int main(void) {
   systick_setup();
   uart_setup();
   adc_setup();
+  i2c_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");
 
