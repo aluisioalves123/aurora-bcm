@@ -20,4 +20,8 @@ void print_serial(const char *frase);
 // espera: se nao houver nada, volta com success = false
 read_result_t read_serial(void);
 
+uint32_t read_rx_lost_bytes(void);
+
+uint32_t read_tx_lost_bytes(void);
+
 #endif // INC_HAL_UART_H

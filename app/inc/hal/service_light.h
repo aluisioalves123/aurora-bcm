@@ -9,4 +9,6 @@ void service_light_setup(void);
 // alcancar o ARR; com a luz desligada, zera o CCR
 void activate_service_light(service_light_state_t service_light_state);
 
+uint32_t service_light_level(void);
+
 #endif // INC_HAL_SERVICE_LIGHT_H

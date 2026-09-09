@@ -1,9 +1,9 @@
-#ifndef INC_TURN_SIGNAL_H
-#define INC_TURN_SIGNAL_H
+#ifndef INC_LOGIC_TURN_SIGNAL_H
+#define INC_LOGIC_TURN_SIGNAL_H
 
 #include <stdbool.h>
 
-#include "hal/buttons.h"
+#include "logic/buttons.h"
 
 typedef enum {
   SIGNAL_OFF,
@@ -26,5 +26,7 @@ signal_state_t next_signal_state(signal_state_t current,
 
 // pura: estado -> quais farois devem piscar
 leds_should_blink_t which_leds_blink(signal_state_t signal_state);
+
+const char * signal_state_name(signal_state_t signal_state);
 
 #endif // INC_TURN_SIGNAL_H

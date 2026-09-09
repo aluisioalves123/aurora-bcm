@@ -1,5 +1,5 @@
-#ifndef INC_LAMPS_H
-#define INC_LAMPS_H
+#ifndef INC_HAL_LAMPS_H
+#define INC_HAL_LAMPS_H
 
 #include "logic/turn_signal.h"
 

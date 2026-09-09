@@ -51,3 +51,18 @@ leds_should_blink_t which_leds_blink(signal_state_t signal_state) {
       };
   }
 }
+
+const char * signal_state_name(signal_state_t signal_state) {
+  switch(signal_state) {
+    case SIGNAL_HAZARD:
+      return "SIGNAL_HAZARD";
+    case SIGNAL_RIGHT:
+      return "SIGNAL_RIGHT";
+    case SIGNAL_LEFT:
+      return "SIGNAL_LEFT";
+    case SIGNAL_OFF:
+      return "SIGNAL_OFF";
+    default:
+      return "UNKNOWN";
+  }
+}

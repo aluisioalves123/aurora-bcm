@@ -3,6 +3,7 @@
 
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/stm32/usart.h>
+#include <libopencm3/stm32/adc.h>
 
 // Mapa do hardware. Se a fiacao ou a PCB mudar, este e o unico arquivo
 // que precisa mudar junto.
@@ -32,5 +33,16 @@
 #define CONSOLE_UART_PORT             (GPIOA)
 #define CONSOLE_UART_TX_PIN           (GPIO2)
 #define CONSOLE_UART_RX_PIN           (GPIO3)
+
+// adc
+#define ADC_UNIT                      (ADC1)
+
+#define BATTERY_VOLTAGE_PORT          (GPIOA)
+#define BATTERY_VOLTAGE_PIN           (GPIO0)
+#define BATTERY_ADC_CHANNEL           (ADC_CHANNEL0)
+
+#define SHUNT_VOLTAGE_PORT            (GPIOA)
+#define SHUNT_VOLTAGE_PIN             (GPIO1)
+#define SHUNT_ADC_CHANNEL             (ADC_CHANNEL1)
 
 #endif // INC_BOARD_H
