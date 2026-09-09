@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdbool.h>
 #include "logic/shunt_current.h"
 #include "logic/adc_scale.h"
 
