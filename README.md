@@ -32,7 +32,7 @@ estilo — é consequência direta de um requisito.
 | 04 | Faróis com brilho e rampa | `F3` | ✅ |
 | 05 | Console de diagnóstico | `F8` | ✅ |
 | 06 | Medir bateria e lâmpada queimada | `F5` `F6` | 🟡 |
-| 07 | Falhas registradas | `R5` | ⬜ |
+| 07 | Falhas registradas | `R5` | 🟡 |
 | 08 | Sobreviver ao mundo real | `R2` `R3` | ⬜ |
 | 09 | Configuração não volátil | `F9` | ⬜ |
 | 10 | Entrar no barramento CAN | `F7` | ⬜ |
@@ -40,9 +40,17 @@ estilo — é consequência direta de um requisito.
 | 12 | Testes e integração contínua | — | ⬜ |
 | 13 | A placa da Aurora | — | ⬜ |
 
-🟡 = em andamento. Da etapa 06 já existem a leitura do ADC e a conversão para
-volts e miliampères; falta o diagnóstico de lâmpada aberta e o modo de proteção
-por bateria fraca.
+🟡 = em andamento.
+
+Da **06**, a `F5` está entregue: o módulo mede a corrente da saída pelo shunt e
+sabe dizer que a lâmpada abriu, com o limiar ancorado em medição de bancada. A
+`F6` está pela metade — mede a tensão de alimentação e registra bateria baixa,
+mas o requisito também pede entrar em modo de proteção, e isso ainda não existe.
+
+Da **07**, a tabela de códigos com contador de ocorrências, estado atual e
+carimbo de tempo está de pé, e o console lê. As falhas que são estado se limpam
+sozinhas quando a condição cessa: não há comando de apagar porque quem entende
+que a falha passou é o próprio firmware.
 
 Falta ainda, das etapas já entregues: a alavanca de três posições ainda é botão,
 a entrada é por varredura e não por interrupção `EXTI`, a frequência do pisca não
@@ -56,6 +64,7 @@ proíbe.
 |---|---|
 | ECU | NUCLEO-F446RE (Cortex-M4F, 512K flash / 128K RAM) |
 | Veículo simulado | Arduino Mega *(a partir da etapa 03)* |
+| Sensor de temperatura | LM75 no I2C1, PB8 e PB9 *(a partir da etapa 06)* |
 | Gravador | ST-Link V2-1 on-board, via SWD |
 | Compilador | `arm-none-eabi-gcc` 14.3.1 |
 | Biblioteca | [libopencm3](https://github.com/libopencm3/libopencm3) (submódulo) |
@@ -71,10 +80,13 @@ app/
 ├── inc/
 │   ├── board.h              mapa do hardware: o único arquivo com pinos
 │   ├── version.h            versão do firmware, reportada pelo console
-│   ├── app/                 terminal
-│   ├── hal/                 systick  buttons  lamps  service_light  uart  adc
+│   ├── app/                 terminal  diagnostics
+│   ├── hal/                 systick  buttons  lamps  service_light  uart
+│   │                        adc  i2c  lm75
 │   └── logic/               turn_signal  service_light  buttons  ring_buffer
 │                            message  battery_millivolts  shunt_current
+│                            temperature  fault_table  lamp_diagnosis
+│                            temperature_diagnosis  battery_diagnosis
 └── src/
     ├── main.c               a casca: setup e o laço
     ├── app/                 decide o que fazer com um comando já montado
@@ -89,7 +101,8 @@ estudos/                     peças de C escritas no PC antes de virarem firmwar
 `logic/` não conhece hardware — nem por header. Quem lê o pino é o `hal/`, quem
 decide é o `logic/`, e o `main.c` liga os dois: `next_debounce(debounce,
 read_buttons())`. A camada `app/` fica acima das duas e cuida do que é política
-de produto, como a tabela de comandos do console.
+de produto: a tabela de comandos do console, e a decisão de que um diagnóstico
+virou falha registrada.
 
 O `main.c` não inclui `board.h`: ele não sabe que existe PA5 nem pull-up. Quando
 a etapa 13 trocar a fiação por uma PCB, só o `board.h` muda.
@@ -143,10 +156,14 @@ enfileira e volta na hora, independente do tamanho do texto.
 |---|---|
 | `/help` | a lista de comandos |
 | `/hello` | `hello world` |
-| `/status` | versão, uptime, estado da seta, nível do farol, bytes perdidos no RX e no TX |
+| `/status` | versão, uptime, seta, lâmpada, farol, bateria, temperatura e bytes perdidos |
 | `/adc_val` | leitura crua do canal do shunt |
 | `/battery_val` | tensão da bateria, em volts |
 | `/shunt_current` | corrente pelo shunt, em miliampères |
+| `/temperature_raw` | valor cru do LM75, em decimal e hexadecimal |
+| `/temperature` | temperatura em graus Celsius |
+| `/fault_list` | os tipos de falha que podem ser consultados |
+| `/fault <tipo>` | estado de uma falha: ativa, ocorrências e quando |
 
 Byte que chega com o buffer cheio não some calado: vira contador, e o `/status`
 mostra. Perder pode acontecer; perder em silêncio, não.
@@ -154,6 +171,42 @@ mostra. Perder pode acontecer; perder em silêncio, não.
 O buffer circular foi escrito à mão no PC, antes de entrar no firmware, com uma
 suíte de 14 asserções em `estudos/` que roda em segundos e devolve código de
 saída — o formato que a etapa 12 vai pedir da integração contínua.
+
+### Diagnóstico e tabela de falhas
+
+O módulo não só detecta defeito: ele guarda o que aconteceu. São seis códigos,
+cada um com contador de ocorrências, estado atual e o instante da última vez.
+
+| Código | Como é detectado |
+|---|---|
+| `FAULT_LAMP_OPEN` | saída ligada e corrente abaixo de 500 µA no shunt |
+| `FAULT_TEMPERATURE_HIGH` | LM75 acima do limiar |
+| `FAULT_BATTERY_LOW` | tensão de alimentação abaixo de 11 V |
+| `FAULT_SENSOR_NOT_RESPONDING` | o LM75 não deu ACK no barramento |
+| `FAULT_RX_BYTE_LOST` | byte chegou pela serial com o buffer cheio |
+| `FAULT_TX_BYTE_LOST` | resposta maior do que a fila de transmissão |
+
+As quatro primeiras são **estado** e se limpam sozinhas quando a condição some —
+a lâmpada voltou a conduzir, a temperatura caiu, a bateria subiu, o sensor voltou
+a responder. As duas de byte perdido são **evento**: aconteceram, e nada que
+venha depois desfaz. O contador nunca é zerado ao limpar, de propósito: falha
+intermitente é a mais difícil de achar, e é o histórico que a denuncia.
+
+O limiar da lâmpada saiu de uma medição, não de um palpite. A lâmpada boa e acesa
+dá 477 contagens de ADC, cerca de 1163 µA; com ela removida a leitura passeia
+entre 0 e 15 µA. Os 10 µA do primeiro chute caíam dentro desse passeio e o
+diagnóstico alternava sozinho entre `OK` e `OPEN`. Os 500 µA de hoje são ~43% do
+nominal, com folga dos dois lados.
+
+Quem registra é a camada `app/`. O `hal/` só traduz pino em valor, o `logic/` só
+decide com função pura, e nenhum dos dois sabe que existe tabela de falha. A
+exceção é o byte perdido, contado dentro do próprio `uart.c` — inclusive de
+dentro da interrupção, no caso da recepção.
+
+O LM75 conversa por I2C com timeout próprio, e não com a função bloqueante da
+libopencm3. Jumper solto, sensor morto ou endereço errado devolvem "não deu certo"
+em vez de congelar o firmware num laço sem saída — o que a `R2` não aceita, e o
+que de fato acontecia antes.
 
 ## Relação com o curso
 
