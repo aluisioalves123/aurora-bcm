@@ -41,3 +41,7 @@ void activate_service_light(service_light_state_t service_light_state) {
     }
   }
 }
+
+uint32_t service_light_level() {
+  return TIM_CCR3(TIM2);
+}

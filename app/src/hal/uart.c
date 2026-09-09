@@ -11,7 +11,8 @@
 // escreve e a interrupcao: sem isso o compilador poderia guardar o valor
 // num registrador e quem le nunca veria o contador subir.
 // perder byte pode acontecer; perder em silencio, nao.
-static volatile uint32_t lost_bytes = 0;
+static volatile uint32_t rx_lost_bytes = 0;
+static volatile uint32_t tx_lost_bytes = 0;
 
 // o buffer de recepcao: a interrupcao escreve, o main tira pelo read_serial
 static ring_buffer_t rx_buffer = { .data = { 0 }, .head = 0, .tail = 0 };
@@ -71,7 +72,7 @@ void usart2_isr(void) {
     // ler o registrador de dados e o que abaixa o RXNE. sem essa leitura a
     // interrupcao voltaria a disparar sem parar, no mesmo byte
     if (!ring_buffer_put(&rx_buffer, (uint8_t)usart_recv(CONSOLE_UART))) {
-      lost_bytes++;
+      rx_lost_bytes++;
     }
   }
 
@@ -95,7 +96,9 @@ void print_serial(const char *frase) {
   // a frase acaba no byte 0, que e o terminador que o compilador poe no
   // fim de todo texto entre aspas duplas
   while (frase[i] != '\0') {
-    ring_buffer_put(&tx_buffer, (uint8_t)frase[i]);
+    if(!ring_buffer_put(&tx_buffer, (uint8_t)frase[i])) {
+      tx_lost_bytes++;
+    }
     i++;
   }
 
@@ -106,4 +109,12 @@ void print_serial(const char *frase) {
 
 read_result_t read_serial(void) {
   return ring_buffer_get(&rx_buffer);
+}
+
+uint32_t read_rx_lost_bytes() {
+  return rx_lost_bytes;
+}
+
+uint32_t read_tx_lost_bytes() {
+  return tx_lost_bytes;
 }

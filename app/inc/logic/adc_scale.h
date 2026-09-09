@@ -1,0 +1,7 @@
+#ifndef LOGIC_ADC_SCALE_H
+#define LOGIC_ADC_SCALE_H
+
+#define ADC_REFERENCE_MILLIVOLTS  3300
+#define ADC_FULL_SCALE            4096
+
+#endif

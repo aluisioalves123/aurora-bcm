@@ -8,6 +8,8 @@
 #include "logic/message.h"
 #include "logic/service_light.h"
 #include "logic/turn_signal.h"
+#include "app/terminal.h"
+#include "hal/adc.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -22,6 +24,7 @@ int main(void) {
   service_light_setup();
   systick_setup();
   uart_setup();
+  adc_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");
 
@@ -60,9 +63,7 @@ int main(void) {
     message = check_for_messages(message, read_serial());
 
     if (message.complete) {
-      // eco: so para dar o que ver na tela enquanto nao existe parser
-      print_serial(message.message);
-      print_serial("\r\n");
+      handle_command(message.message, signal_state);
     }
 
     if (now != last_scan) { // entra aqui a cada 1 ms

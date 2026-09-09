@@ -1,7 +1,7 @@
 #ifndef INC_LOGIC_SERVICE_LIGHT_H
 #define INC_LOGIC_SERVICE_LIGHT_H
 
-#include "hal/buttons.h"
+#include "logic/buttons.h"
 
 typedef enum {
   SERVICE_LIGHT_OFF,

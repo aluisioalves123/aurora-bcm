@@ -61,7 +61,7 @@ Fonte de verdade: `app/inc/board.h`.
 | Botão luz de serviço | PC13 | B1 da placa, idem |
 | Farol de trabalho (PWM) | PB10 | AF1, TIM2 canal 3 |
 
-TIM2: `PSC = 224`, `ARR = 399` → 2 kHz a 180 MHz. `CCR3` anda um passo por
+TIM2: `PSC = 224`, `ARR = 399` → 1 kHz a 180 MHz. `CCR3` anda um passo por
 systick, então a rampa completa leva 400 ms (F3).
 
 ## Toolchain (caminhos reais)

@@ -54,16 +54,10 @@ CSTD		?= -std=c99
 ###############################################################################
 # Source files
 
-OBJS		+= $(SRC_DIR)/main.o
-OBJS		+= $(SRC_DIR)/hal/systick.o
-OBJS		+= $(SRC_DIR)/hal/buttons.o
-OBJS		+= $(SRC_DIR)/hal/lamps.o
-OBJS		+= $(SRC_DIR)/hal/service_light.o
-OBJS		+= $(SRC_DIR)/hal/uart.o
-OBJS		+= $(SRC_DIR)/logic/turn_signal.o
-OBJS		+= $(SRC_DIR)/logic/service_light.o
-OBJS		+= $(SRC_DIR)/logic/ring_buffer.o
-OBJS		+= $(SRC_DIR)/logic/message.o
+# A lista sai do disco: todo .c sob src/ entra no build. Assim OBJS nao
+# desatualiza quando um arquivo e criado, movido ou renomeado.
+SRCS		:= $(sort $(shell find $(SRC_DIR) -name '*.c'))
+OBJS		+= $(SRCS:.c=.o)
 
 ###############################################################################
 # C flags
@@ -180,7 +174,8 @@ print-%:
 
 clean:
 	@#printf "  CLEAN\n"
-	$(Q)$(RM) $(GENERATED_BINARIES) generated.* $(OBJS) $(OBJS:%.o=%.d)
+	$(Q)$(RM) $(GENERATED_BINARIES) generated.*
+	$(Q)find $(SRC_DIR) \( -name "*.o" -o -name "*.d" \) -delete
 
 
 .PHONY: images clean elf bin hex srec list

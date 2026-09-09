@@ -1,11 +1,3 @@
-/*
- * ring_buffer.h — interface do buffer circular.
- *
- * Autoria: declarações transcritas do código de Aluisio Cunha.
- * Este arquivo não contém lógica; existe só para quem usa o buffer
- * enxergar o que ring_buffer.c implementa.
- */
-
 #ifndef INC_LOGIC_RING_BUFFER_H
 #define INC_LOGIC_RING_BUFFER_H
 

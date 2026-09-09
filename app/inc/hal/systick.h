@@ -1,5 +1,5 @@
-#ifndef INC_SYSTICK_H
-#define INC_SYSTICK_H
+#ifndef INC_HAL_SYSTICK_H
+#define INC_HAL_SYSTICK_H
 
 #include <stdint.h>
 
