@@ -16,6 +16,8 @@
 #include "app/diagnostics/service.h"
 #include "logic/fault_table/core.h"
 #include "logic/fault_table/core.h"
+#include "logic/reset_cause/core.h"
+#include "hal/reset_cause/driver.h"
 
 // um comando por funcao. o handle_command la embaixo so escolhe qual chamar,
 // e cada uma cuida da propria resposta.
@@ -40,8 +42,8 @@ static void command_help(void) {
       "  /fault <tipo>    estado de uma falha: ativa, ocorrencias e quando\r\n");
 }
 
-static void command_status(signal_state_t signal_state) {
-  char status[256];
+static void command_status(signal_state_t signal_state, reset_cause_t last_reset_cause) {
+  char status[320];
   uint32_t uptime_seconds = get_ticks() / 1000;
   uint32_t service_light = service_light_level();
   uint32_t rx_lost = read_rx_lost_bytes();
@@ -76,6 +78,7 @@ static void command_status(signal_state_t signal_state) {
   snprintf(status, sizeof(status),
       "Aurora BCM v%s\r\n"
       "uptime: %lu s\r\n"
+      "ultimo reset: %s\r\n"
       "seta: %s\r\n"
       "lampada direita: %s\r\n"
       "farol: %lu/399\r\n"
@@ -85,6 +88,7 @@ static void command_status(signal_state_t signal_state) {
       "tx perdidos: %lu\r\n",
       FIRMWARE_VERSION,
       (unsigned long)uptime_seconds,
+      reset_cause_text(last_reset_cause),
       signal_state_name(signal_state),
       lamp_diagnosis_name(lamp),
       (unsigned long)service_light,
@@ -240,13 +244,13 @@ static void command_unknown(void) {
   print_serial("comando nao conhecido, consulte a tabela com /help\r\n");
 }
 
-void handle_command(const char* prompt, signal_state_t signal_state) {
+void handle_command(const char* prompt, signal_state_t signal_state, reset_cause_t last_reset_cause) {
   if (strcmp(prompt, "/hello") == 0) {
     command_hello();
   } else if (strcmp(prompt, "/help") == 0) {
     command_help();
   } else if (strcmp(prompt, "/status") == 0) {
-    command_status(signal_state);
+    command_status(signal_state, last_reset_cause);
   } else if (strcmp(prompt, "/adc_val") == 0) {
     command_adc_val();
   } else if (strcmp(prompt, "/battery_val") == 0) {

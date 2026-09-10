@@ -12,6 +12,7 @@
 #include "hal/adc/driver.h"
 #include "hal/i2c/driver.h"
 #include "hal/watchdog/driver.h"
+#include "hal/reset_cause/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -21,6 +22,7 @@ static void rcc_setup(void) {
 
 int main(void) {
   rcc_setup();
+  reset_cause_t last_reset_cause = reset_cause(read_and_clear_reset_cause_register());
   lamps_setup();
   buttons_setup();
   service_light_setup();
@@ -67,7 +69,7 @@ int main(void) {
     message = check_for_messages(message, read_serial());
 
     if (message.complete) {
-      handle_command(message.message, signal_state);
+      handle_command(message.message, signal_state, last_reset_cause);
     }
 
     if (now != last_scan) { // entra aqui a cada 1 ms
