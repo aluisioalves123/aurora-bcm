@@ -1,5 +1,5 @@
-#ifndef INC_BOARD_H
-#define INC_BOARD_H
+#ifndef BOARD_H
+#define BOARD_H
 
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/stm32/usart.h>
@@ -51,4 +51,4 @@
 #define LM75_SDA_PORT                     (GPIOB)
 #define LM75_SDA_PIN                      (GPIO9)
 
-#endif // INC_BOARD_H
+#endif // BOARD_H

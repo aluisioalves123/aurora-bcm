@@ -1,5 +1,5 @@
-#ifndef INC_APP_DIAGNOSTICS_H
-#define INC_APP_DIAGNOSTICS_H
+#ifndef APP_DIAGNOSTICS_H
+#define APP_DIAGNOSTICS_H
 
 #include "hal/lm75/driver.h"
 #include "logic/battery_diagnosis/core.h"
@@ -23,4 +23,4 @@ temperature_diagnosis_t temperature_diagnosis_update(temperature_read_t reading)
 // e costuma imprimir o mesmo numero.
 battery_diagnosis_t battery_diagnosis_update(uint32_t millivolts);
 
-#endif // INC_APP_DIAGNOSTICS_H
+#endif // APP_DIAGNOSTICS_H

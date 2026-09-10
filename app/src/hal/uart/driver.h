@@ -1,5 +1,5 @@
-#ifndef INC_HAL_UART_H
-#define INC_HAL_UART_H
+#ifndef HAL_UART_H
+#define HAL_UART_H
 
 #include "logic/ring_buffer/core.h"
 
@@ -24,4 +24,4 @@ uint32_t read_rx_lost_bytes(void);
 
 uint32_t read_tx_lost_bytes(void);
 
-#endif // INC_HAL_UART_H
+#endif // HAL_UART_H

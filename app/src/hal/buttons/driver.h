@@ -1,5 +1,5 @@
-#ifndef INC_HAL_BUTTONS_H
-#define INC_HAL_BUTTONS_H
+#ifndef HAL_BUTTONS_H
+#define HAL_BUTTONS_H
 
 #include "logic/buttons/core.h"
 

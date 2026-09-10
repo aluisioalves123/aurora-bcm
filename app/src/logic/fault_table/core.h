@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_FAULT_TABLE_H
-#define INC_LOGIC_FAULT_TABLE_H
+#ifndef LOGIC_FAULT_TABLE_H
+#define LOGIC_FAULT_TABLE_H
 
 #include <stdint.h>
 #include <stdbool.h>

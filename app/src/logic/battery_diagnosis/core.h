@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_BATTERY_DIAGNOSIS_H
-#define INC_LOGIC_BATTERY_DIAGNOSIS_H
+#ifndef LOGIC_BATTERY_DIAGNOSIS_H
+#define LOGIC_BATTERY_DIAGNOSIS_H
 
 #include <stdint.h>
 
@@ -22,4 +22,4 @@ battery_diagnosis_t battery_diagnosis(uint32_t millivolts);
 
 const char * battery_diagnosis_name(battery_diagnosis_t battery_diagnosis);
 
-#endif // INC_LOGIC_BATTERY_DIAGNOSIS_H
+#endif // LOGIC_BATTERY_DIAGNOSIS_H

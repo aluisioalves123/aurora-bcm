@@ -1,5 +1,5 @@
-#ifndef INC_TERMINAL_H
-#define INC_TERMINAL_H
+#ifndef APP_TERMINAL_H
+#define APP_TERMINAL_H
 
 #include "logic/turn_signal/core.h"
 

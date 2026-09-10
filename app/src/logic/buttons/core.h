@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_BUTTONS_H
-#define INC_LOGIC_BUTTONS_H
+#ifndef LOGIC_BUTTONS_H
+#define LOGIC_BUTTONS_H
 
 #define DEBOUNCE_TICKS (20)
 

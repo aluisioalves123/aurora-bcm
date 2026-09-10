@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_TEMPERATURE_DIAGNOSIS_H
-#define INC_LOGIC_TEMPERATURE_DIAGNOSIS_H
+#ifndef LOGIC_TEMPERATURE_DIAGNOSIS_H
+#define LOGIC_TEMPERATURE_DIAGNOSIS_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -21,4 +21,4 @@ temperature_diagnosis_t temperature_diagnosis(int32_t millicelsius, bool sensor_
 
 const char * temperature_diagnosis_name(temperature_diagnosis_t temperature_diagnosis);
 
-#endif // INC_LOGIC_TEMPERATURE_DIAGNOSIS_H
+#endif // LOGIC_TEMPERATURE_DIAGNOSIS_H
