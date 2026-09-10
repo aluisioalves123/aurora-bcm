@@ -1,16 +1,17 @@
 #include <libopencm3/stm32/rcc.h>
 
-#include "hal/buttons.h"
-#include "hal/lamps.h"
-#include "hal/service_light.h"
-#include "hal/systick.h"
-#include "hal/uart.h"
-#include "logic/message.h"
-#include "logic/service_light.h"
-#include "logic/turn_signal.h"
-#include "app/terminal.h"
-#include "hal/adc.h"
-#include "hal/i2c.h"
+#include "hal/buttons/driver.h"
+#include "hal/lamps/driver.h"
+#include "hal/service_light/driver.h"
+#include "hal/systick/driver.h"
+#include "hal/uart/driver.h"
+#include "logic/message/core.h"
+#include "logic/service_light/core.h"
+#include "logic/turn_signal/core.h"
+#include "app/terminal/service.h"
+#include "hal/adc/driver.h"
+#include "hal/i2c/driver.h"
+#include "hal/watchdog/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -27,6 +28,7 @@ int main(void) {
   uart_setup();
   adc_setup();
   i2c_setup();
+  watchdog_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");
 
@@ -93,6 +95,7 @@ int main(void) {
       service_light_state = next_service_light;
 
       activate_service_light(service_light_state);
+      watchdog_feed();
     }
 
     if (now - last_blink >= BLINK_INTERVAL_MS) {

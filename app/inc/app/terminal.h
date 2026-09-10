@@ -1,8 +1,0 @@
-#ifndef INC_TERMINAL_H
-#define INC_TERMINAL_H
-
-#include "logic/turn_signal.h"
-
-void handle_command(const char* prompt, signal_state_t signal_state);
-
-#endif
