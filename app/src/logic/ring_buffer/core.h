@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_RING_BUFFER_H
-#define INC_LOGIC_RING_BUFFER_H
+#ifndef LOGIC_RING_BUFFER_H
+#define LOGIC_RING_BUFFER_H
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -23,4 +23,4 @@ typedef struct {
 bool ring_buffer_put(ring_buffer_t *buffer, uint8_t byte);
 read_result_t ring_buffer_get(ring_buffer_t *buffer);
 
-#endif /* INC_LOGIC_RING_BUFFER_H */
+#endif /* LOGIC_RING_BUFFER_H */

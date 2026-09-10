@@ -1,5 +1,5 @@
-#ifndef INC_HAL_LM75_H
-#define INC_HAL_LM75_H
+#ifndef HAL_LM75_H
+#define HAL_LM75_H
 
 #include <stdint.h>
 #include <stdbool.h>

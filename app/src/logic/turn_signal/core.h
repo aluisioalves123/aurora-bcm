@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_TURN_SIGNAL_H
-#define INC_LOGIC_TURN_SIGNAL_H
+#ifndef LOGIC_TURN_SIGNAL_H
+#define LOGIC_TURN_SIGNAL_H
 
 #include <stdbool.h>
 
@@ -29,4 +29,4 @@ leds_should_blink_t which_leds_blink(signal_state_t signal_state);
 
 const char * signal_state_name(signal_state_t signal_state);
 
-#endif // INC_TURN_SIGNAL_H
+#endif // LOGIC_TURN_SIGNAL_H

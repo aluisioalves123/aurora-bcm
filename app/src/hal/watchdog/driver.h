@@ -1,5 +1,5 @@
-#ifndef INC_HAL_WATCHDOG_H
-#define INC_HAL_WATCHDOG_H
+#ifndef HAL_WATCHDOG_H
+#define HAL_WATCHDOG_H
 
 void watchdog_setup(void);
 

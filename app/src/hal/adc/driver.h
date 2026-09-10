@@ -1,5 +1,5 @@
-#ifndef INC_HAL_ADC_H
-#define INC_HAL_ADC_H
+#ifndef HAL_ADC_H
+#define HAL_ADC_H
 
 void adc_setup(void);
 

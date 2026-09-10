@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_SERVICE_LIGHT_H
-#define INC_LOGIC_SERVICE_LIGHT_H
+#ifndef LOGIC_SERVICE_LIGHT_H
+#define LOGIC_SERVICE_LIGHT_H
 
 #include "logic/buttons/core.h"
 
@@ -15,4 +15,4 @@ service_light_state_t next_service_light_state(service_light_state_t current,
                                                button_states_t now,
                                                button_states_t previous);
 
-#endif // INC_LOGIC_SERVICE_LIGHT_H
+#endif // LOGIC_SERVICE_LIGHT_H

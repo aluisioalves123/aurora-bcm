@@ -1,5 +1,5 @@
-#ifndef INC_HAL_SERVICE_LIGHT_H
-#define INC_HAL_SERVICE_LIGHT_H
+#ifndef HAL_SERVICE_LIGHT_H
+#define HAL_SERVICE_LIGHT_H
 
 #include "logic/service_light/core.h"
 
@@ -11,4 +11,4 @@ void activate_service_light(service_light_state_t service_light_state);
 
 uint32_t service_light_level(void);
 
-#endif // INC_HAL_SERVICE_LIGHT_H
+#endif // HAL_SERVICE_LIGHT_H

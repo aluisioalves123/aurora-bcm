@@ -1,5 +1,5 @@
-#ifndef INC_HAL_SYSTICK_H
-#define INC_HAL_SYSTICK_H
+#ifndef HAL_SYSTICK_H
+#define HAL_SYSTICK_H
 
 #include <stdint.h>
 
@@ -9,4 +9,4 @@
 void systick_setup(void);
 uint64_t get_ticks(void);
 
-#endif // INC_SYSTICK_H
+#endif // HAL_SYSTICK_H

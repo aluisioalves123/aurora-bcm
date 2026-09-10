@@ -1,6 +1,6 @@
 #include <stdint.h>
-#ifndef INC_LOGIC_LAMP_DIANOSIS_H
-#define INC_LOGIC_LAMP_DIANOSIS_H
+#ifndef LOGIC_LAMP_DIAGNOSIS_H
+#define LOGIC_LAMP_DIAGNOSIS_H
 
 // Ancorado na corrente nominal, nao no ruido. Medido na bancada: a lampada
 // boa e acesa da 477 contagens de ADC, que a cadeia converte em ~1163 uA.

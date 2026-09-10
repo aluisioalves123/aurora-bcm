@@ -1,5 +1,5 @@
-#ifndef INC_LOGIC_MESSAGE_H
-#define INC_LOGIC_MESSAGE_H
+#ifndef LOGIC_MESSAGE_H
+#define LOGIC_MESSAGE_H
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -19,4 +19,4 @@ typedef struct {
 // nao sabe que existe UART. quem le o byte e o main.
 message_t check_for_messages(message_t current, read_result_t incoming);
 
-#endif // INC_LOGIC_MESSAGE_H
+#endif // LOGIC_MESSAGE_H
