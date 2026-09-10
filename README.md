@@ -76,27 +76,35 @@ caminhos estão no [CLAUDE.md](CLAUDE.md).
 ## Estrutura
 
 ```
-app/
-├── inc/
-│   ├── board.h              mapa do hardware: o único arquivo com pinos
-│   ├── version.h            versão do firmware, reportada pelo console
-│   ├── app/                 terminal  diagnostics
-│   ├── hal/                 systick  buttons  lamps  service_light  uart
-│   │                        adc  i2c  lm75
-│   └── logic/               turn_signal  service_light  buttons  ring_buffer
-│                            message  battery_millivolts  shunt_current
-│                            temperature  fault_table  lamp_diagnosis
-│                            temperature_diagnosis  battery_diagnosis
-└── src/
-    ├── main.c               a casca: setup e o laço
-    ├── app/                 decide o que fazer com um comando já montado
-    ├── hal/                 fala com o hardware
-    └── logic/               só decide, funções puras
+app/src/
+├── main.c                   a casca: setup e o laço
+├── board.h                  mapa do hardware: o único lugar com pinos
+├── version.h                versão do firmware, reportada pelo console
+├── app/                     decide o que fazer com um comando já montado
+│   ├── terminal/            service.c + service.h
+│   └── diagnostics/         service.c + service.h
+├── hal/                     fala com o hardware (driver.c + driver.h)
+│                            adc  buttons  i2c  lamps  lm75  service_light
+│                            systick  uart  watchdog
+└── logic/                   só decide, funções puras (core.c + core.h)
+                             adc_scale  battery_diagnosis  battery_millivolts
+                             buttons  fault_table  lamp_diagnosis  message
+                             ring_buffer  service_light  shunt_current
+                             temperature  temperature_diagnosis  turn_signal
+
+app/build/                   objetos e dependências, espelhando a árvore acima
 
 estudos/                     peças de C escritas no PC antes de virarem firmware
 ├── ring_buffer.c            o buffer circular, escrito à mão
 └── test_ring_buffer.c       14 asserções, rodam no PC, exit 1 se alguma falha
 ```
+
+Cada módulo é uma pasta com as duas metades juntas, e o nome do arquivo diz de
+que camada ele é: `hal/uart/driver.c`, `logic/turn_signal/core.c`,
+`app/terminal/service.c`. É a frase que rege a arquitetura — *núcleo puro, casca
+imperativa* — virando nome de arquivo. Header sem `.c` nenhum fica solto:
+`board.h`, `version.h`, `logic/adc_scale.h`, porque pasta com um arquivo só não
+organiza nada.
 
 `logic/` não conhece hardware — nem por header. Quem lê o pino é o `hal/`, quem
 decide é o `logic/`, e o `main.c` liga os dois: `next_debounce(debounce,

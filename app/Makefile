@@ -6,7 +6,7 @@ NULL		:= 2>/dev/null
 endif
 
 SRC_DIR     = src
-INC_DIR     = inc
+BUILD_DIR   = build
 OPENCM3_DIR = ../libopencm3
 
 BINARY = firmware
@@ -30,7 +30,7 @@ LDFLAGS		+= -L$(OPENCM3_DIR)/lib
 # Includes
 
 DEFS		+= -I$(OPENCM3_DIR)/include
-DEFS		+= -I$(INC_DIR)
+DEFS		+= -I$(SRC_DIR)
 
 ###############################################################################
 # Executables
@@ -57,7 +57,7 @@ CSTD		?= -std=c99
 # A lista sai do disco: todo .c sob src/ entra no build. Assim OBJS nao
 # desatualiza quando um arquivo e criado, movido ou renomeado.
 SRCS		:= $(sort $(shell find $(SRC_DIR) -name '*.c'))
-OBJS		+= $(SRCS:.c=.o)
+OBJS		+= $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 ###############################################################################
 # C flags
@@ -156,6 +156,11 @@ print-%:
 	@#printf "  LD      $(*).elf\n"
 	$(Q)$(LD) $(TGT_LDFLAGS) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(*).elf
 
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	@#printf "  CC      $<\n"
+	$(Q)mkdir -p $(dir $@)
+	$(Q)$(CC) $(TGT_CFLAGS) $(CFLAGS) $(TGT_CPPFLAGS) $(CPPFLAGS) -o $@ -c $<
+
 %.o: %.c
 	@#printf "  CC      $(*).c\n"
 	$(Q)$(CC) $(TGT_CFLAGS) $(CFLAGS) $(TGT_CPPFLAGS) $(CPPFLAGS) -o $(*).o -c $(*).c
@@ -175,6 +180,7 @@ print-%:
 clean:
 	@#printf "  CLEAN\n"
 	$(Q)$(RM) $(GENERATED_BINARIES) generated.*
+	$(Q)$(RM) -r $(BUILD_DIR)
 	$(Q)find $(SRC_DIR) \( -name "*.o" -o -name "*.d" \) -delete
 
 

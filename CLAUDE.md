@@ -47,9 +47,16 @@ global. O estado que sobrevive entre iterações mora à vista no `main`.
 **Camadas:** `hal/` fala com hardware, `logic/` só decide, `board.h` é o único
 lugar com pino e porta, `main.c` orquestra e não conhece pino nenhum.
 
+**Um módulo, uma pasta, e o nome do arquivo diz a camada.** `hal/uart/` tem
+`driver.c` e `driver.h`; `logic/turn_signal/` tem `core.c` e `core.h`;
+`app/terminal/` tem `service.c` e `service.h`. É a frase "núcleo puro, casca
+imperativa" virando nome de arquivo: `core` é o núcleo, `driver` é a casca.
+Header sem `.c` nenhum fica solto na pasta da camada — `board.h`, `version.h`,
+`logic/adc_scale.h`.
+
 ## Mapa de pinos
 
-Fonte de verdade: `app/inc/board.h`.
+Fonte de verdade: `app/src/board.h`.
 
 | Função | Pino | Observação |
 |---|---|---|
