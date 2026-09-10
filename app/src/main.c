@@ -13,6 +13,7 @@
 #include "hal/i2c/driver.h"
 #include "hal/watchdog/driver.h"
 #include "hal/reset_cause/driver.h"
+#include "hal/fault_handler/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -104,6 +105,8 @@ int main(void) {
       blink_leds(leds_should_blink);
       last_blink = now;
     }
+
+    __asm__("wfi"); //modo de baixo consumo de energia
   }
 
   // Never return
