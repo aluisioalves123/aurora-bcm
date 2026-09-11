@@ -4,14 +4,14 @@
 #include <stdint.h>
 
 typedef enum {
-  LOW_POWER,
-  WINDOW_WATCHDOG,
-  WATCHDOG,
-  SOFTWARE,
-  POWER_ON,
-  BUTTON_PRESS,
-  BROWN_OUT,
-  UNKNOWN
+  RESET_LOW_POWER,
+  RESET_WINDOW_WATCHDOG,
+  RESET_WATCHDOG,
+  RESET_SOFTWARE,
+  RESET_POWER_ON,
+  RESET_BUTTON_PRESS,
+  RESET_BROWN_OUT,
+  RESET_UNKNOWN
 } reset_cause_t; 
 
 const char * reset_cause_text(reset_cause_t reset_cause);

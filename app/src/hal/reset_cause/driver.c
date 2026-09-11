@@ -10,21 +10,21 @@ uint32_t read_and_clear_reset_cause_register(void) {
 
 reset_cause_t reset_cause(uint32_t csr) {
   if (csr & RCC_CSR_LPWRRSTF) {
-    return LOW_POWER;
+    return RESET_LOW_POWER;
   } else if (csr & RCC_CSR_WWDGRSTF) {
-    return WINDOW_WATCHDOG;
+    return RESET_WINDOW_WATCHDOG;
   } else if (csr & RCC_CSR_IWDGRSTF) {
-    return WATCHDOG;
+    return RESET_WATCHDOG;
   } else if (csr & RCC_CSR_SFTRSTF) {
-    return SOFTWARE;
+    return RESET_SOFTWARE;
   } else if (csr & RCC_CSR_PORRSTF) {
-    return POWER_ON;
+    return RESET_POWER_ON;
   } else if (csr & RCC_CSR_PINRSTF) {
-    return BUTTON_PRESS;
+    return RESET_BUTTON_PRESS;
   } else if (csr & RCC_CSR_BORRSTF) {
-    return BROWN_OUT;
+    return RESET_BROWN_OUT;
   } else {
-    return UNKNOWN;
+    return RESET_UNKNOWN;
   }
 }
 
