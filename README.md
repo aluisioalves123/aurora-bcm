@@ -33,7 +33,7 @@ estilo — é consequência direta de um requisito.
 | 05 | Console de diagnóstico | `F8` | ✅ |
 | 06 | Medir bateria e lâmpada queimada | `F5` `F6` | 🟡 |
 | 07 | Falhas registradas | `R5` | 🟡 |
-| 08 | Sobreviver ao mundo real | `R2` `R3` | ⬜ |
+| 08 | Sobreviver ao mundo real | `R2` `R3` | 🟡 |
 | 09 | Configuração não volátil | `F9` | ⬜ |
 | 10 | Entrar no barramento CAN | `F7` | ⬜ |
 | 11 | Atualizar sem tirar do veículo | `F10` | ⬜ |
@@ -52,6 +52,13 @@ carimbo de tempo está de pé, e o console lê. As falhas que são estado se lim
 sozinhas quando a condição cessa: não há comando de apagar porque quem entende
 que a falha passou é o próprio firmware.
 
+Da **08**, o watchdog está de pé, o tratador de `HardFault` substituiu o laço
+infinito da libopencm3 por um reset imediato, e o módulo sabe dizer por que
+reiniciou — sete causas distinguidas. O laço principal dorme em `wfi` entre
+interrupções, que é o primeiro passo da `R3`. Falta o modo de baixo consumo de
+verdade, com o módulo acordando por porta aberta ou atividade no barramento, e
+a medição da corrente de repouso.
+
 Falta ainda, das etapas já entregues: a alavanca de três posições ainda é botão,
 a entrada é por varredura e não por interrupção `EXTI`, a frequência do pisca não
 foi medida com analisador lógico — só conferida a olho — e a leitura do ADC ainda
@@ -65,6 +72,7 @@ proíbe.
 | ECU | NUCLEO-F446RE (Cortex-M4F, 512K flash / 128K RAM) |
 | Veículo simulado | Arduino Mega *(a partir da etapa 03)* |
 | Sensor de temperatura | LM75 no I2C1, PB8 e PB9 *(a partir da etapa 06)* |
+| Cartão SD | módulo SPI no PB13, PB14 e PB15, CS no PB1 *(a partir da etapa 08)* |
 | Gravador | ST-Link V2-1 on-board, via SWD |
 | Compilador | `arm-none-eabi-gcc` 14.3.1 |
 | Biblioteca | [libopencm3](https://github.com/libopencm3/libopencm3) (submódulo) |
@@ -85,12 +93,14 @@ app/src/
 │   └── diagnostics/         service.c + service.h
 ├── hal/                     fala com o hardware (driver.c + driver.h)
 │                            adc  buttons  i2c  lamps  lm75  service_light
-│                            systick  uart  watchdog
+│                            systick  uart  watchdog  reset_cause
+│                            fault_handler  spi  sd_card
 └── logic/                   só decide, funções puras (core.c + core.h)
                              adc_scale  battery_diagnosis  battery_millivolts
                              buttons  fault_table  lamp_diagnosis  message
                              ring_buffer  service_light  shunt_current
                              temperature  temperature_diagnosis  turn_signal
+                             reset_cause
 
 app/build/                   objetos e dependências, espelhando a árvore acima
 
@@ -164,7 +174,7 @@ enfileira e volta na hora, independente do tamanho do texto.
 |---|---|
 | `/help` | a lista de comandos |
 | `/hello` | `hello world` |
-| `/status` | versão, uptime, seta, lâmpada, farol, bateria, temperatura e bytes perdidos |
+| `/status` | versão, uptime, motivo do último reset, seta, lâmpada, farol, bateria, temperatura e bytes perdidos |
 | `/adc_val` | leitura crua do canal do shunt |
 | `/battery_val` | tensão da bateria, em volts |
 | `/shunt_current` | corrente pelo shunt, em miliampères |
@@ -172,6 +182,8 @@ enfileira e volta na hora, independente do tamanho do texto.
 | `/temperature` | temperatura em graus Celsius |
 | `/fault_list` | os tipos de falha que podem ser consultados |
 | `/fault <tipo>` | estado de uma falha: ativa, ocorrências e quando |
+| `/sd_init` | acorda o cartão SD, manda CMD0 e CMD8 e inicializa |
+| `/sd_addressing` | se o cartão endereça por bloco ou por byte |
 
 Byte que chega com o buffer cheio não some calado: vira contador, e o `/status`
 mostra. Perder pode acontecer; perder em silêncio, não.
@@ -215,6 +227,51 @@ O LM75 conversa por I2C com timeout próprio, e não com a função bloqueante d
 libopencm3. Jumper solto, sensor morto ou endereço errado devolvem "não deu certo"
 em vez de congelar o firmware num laço sem saída — o que a `R2` não aceita, e o
 que de fato acontecia antes.
+
+### Sobreviver a si mesmo
+
+O watchdog reinicia o módulo se o laço principal parar de alimentá-lo, e o
+tratador de `HardFault` — que substitui o laço infinito da libopencm3 — reinicia
+na hora, em vez de esperar o watchdog morder. Isso separa duas famílias de
+problema no diagnóstico:
+
+| causa do reset | o que aconteceu |
+|---|---|
+| `RESET_SOFTWARE` | exceção do núcleo: acesso inválido, instrução ilegal |
+| `RESET_WATCHDOG` | travou sem exceção: laço infinito, espera que não termina |
+| `RESET_BUTTON_PRESS` | alguém apertou o botão |
+| `RESET_POWER_ON` | energia acabou de chegar |
+
+O `RCC_CSR` é lido **uma vez**, no boot, e a leitura já limpa os flags. Por isso
+o valor viaja como parâmetro até o console em vez de ser lido na hora do
+comando: se o `/status` lesse o registrador, o primeiro comando apagaria a
+evidência e o segundo responderia `RESET_UNKNOWN`.
+
+O laço principal termina em `wfi`: o núcleo dorme até a próxima interrupção em
+vez de girar em vazio. Isso não atrasa o console, porque cada byte que chega pela
+serial é ele próprio uma interrupção e acorda o núcleo — o consumo acompanha a
+chegada sozinho.
+
+### Cartão SD por SPI
+
+Fora das treze etapas, como base para guardar o que o módulo registra.
+
+O SPI2 começa em 351 kHz — divisão por 128 sobre os 45 MHz do APB1 — porque o
+cartão só aceita entre 100 e 400 kHz enquanto está inicializando. A sequência é
+80 pulsos de clock com o CS alto para ele acordar, `CMD0` para entrar em modo
+SPI, `CMD8` para conferir versão e faixa de tensão, e o par `CMD55` + `ACMD41`
+repetido até sair do estado ocioso.
+
+Os comandos moram numa tabela, não numa função cada. O enum é o índice, e a
+tabela guarda o quadro de 6 bytes junto com quantos bytes de resposta estendida
+aquele comando devolve:
+
+```c
+[SD_CMD8_CHECK_INTERFACE] = { { 0x40 | 8, 0x00, 0x00, 0x01, 0xAA, 0x87 }, 4 },
+```
+
+O tamanho da resposta virou propriedade do comando, em vez de algo que quem
+chama precisa lembrar. Acrescentar um comando é uma linha.
 
 ## Relação com o curso
 
