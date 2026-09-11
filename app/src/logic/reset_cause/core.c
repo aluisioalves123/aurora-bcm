@@ -2,19 +2,19 @@
 
 const char * reset_cause_text(reset_cause_t reset_cause) {
   switch(reset_cause) {
-    case LOW_POWER:
+    case RESET_LOW_POWER:
       return "LOW_POWER";
-    case WINDOW_WATCHDOG:
+    case RESET_WINDOW_WATCHDOG:
       return "WINDOW_WATCHDOG";
-    case WATCHDOG:
+    case RESET_WATCHDOG:
       return "WATCHDOG";
-    case SOFTWARE:
+    case RESET_SOFTWARE:
       return "SOFTWARE";
-    case POWER_ON:
+    case RESET_POWER_ON:
       return "POWER_ON";
-    case BUTTON_PRESS:
+    case RESET_BUTTON_PRESS:
       return "BUTTON_PRESS";
-    case BROWN_OUT:
+    case RESET_BROWN_OUT:
       return "BROWN_OUT";
     default:
       return "UNKNOWN";
