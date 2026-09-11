@@ -46,9 +46,20 @@
 #define SHUNT_ADC_CHANNEL             (ADC_CHANNEL1)
 
 // lm75 temperature sensor
-#define LM75_SCL_PORT                     (GPIOB)
-#define LM75_SCL_PIN                      (GPIO8)
-#define LM75_SDA_PORT                     (GPIOB)
-#define LM75_SDA_PIN                      (GPIO9)
+#define LM75_SCL_PORT                 (GPIOB)
+#define LM75_SCL_PIN                  (GPIO8)
+#define LM75_SDA_PORT                 (GPIOB)
+#define LM75_SDA_PIN                  (GPIO9)
+
+// spi
+#define SPI_PORT                      (GPIOB)
+#define SPI_SCK_PIN                   (GPIO13)
+#define SPI_MISO_PIN                  (GPIO14)
+#define SPI_MOSI_PIN                  (GPIO15)
+
+// sd card
+#define SD_CARD_SPI                   (SPI2)
+#define SD_CARD_CS_PORT               (GPIOB)
+#define SD_CARD_CS_PIN                (GPIO1)
 
 #endif // BOARD_H

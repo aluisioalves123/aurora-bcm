@@ -17,6 +17,7 @@
 #include "logic/fault_table/core.h"
 #include "logic/fault_table/core.h"
 #include "logic/reset_cause/core.h"
+#include "hal/sd_card/driver.h"
 #include "hal/reset_cause/driver.h"
 
 // um comando por funcao. o handle_command la embaixo so escolhe qual chamar,
@@ -39,7 +40,9 @@ static void command_help(void) {
       "  /temperature_raw valor cru do LM75, decimal e hexadecimal\r\n"
       "  /temperature     temperatura em graus Celsius\r\n"
       "  /fault_list      tipos de falha que podem ser consultados\r\n"
-      "  /fault <tipo>    estado de uma falha: ativa, ocorrencias e quando\r\n");
+      "  /fault <tipo>    estado de uma falha: ativa, ocorrencias e quando\r\n"
+      "  /sd_init         acorda o cartao SD, manda CMD0, CMD8 e inicializa\r\n"
+      "  /sd_addressing   se o cartao endereca por bloco ou por byte\r\n");
 }
 
 static void command_status(signal_state_t signal_state, reset_cause_t last_reset_cause) {
@@ -240,6 +243,40 @@ static void command_fault(const char *tipo) {
   print_serial("tipo de falha desconhecido, veja a lista com /fault_list\r\n");
 }
 
+static void command_sd_init(void) {
+  char linha[64];
+
+  // os 80 pulsos de acordar primeiro, o CMD0 depois: o cartao so escuta
+  // comando depois de ver clock suficiente com o CS alto
+  wake_up();
+
+  snprintf(linha, sizeof(linha), "sd cmd0: 0x%02X\r\n", (unsigned)spi_mode_config());
+  print_serial(linha);
+
+  sd_response_t cmd8 = check_interface_condition();
+
+  snprintf(linha, sizeof(linha),
+      "sd cmd8: r1=0x%02X payload=0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+      (unsigned)cmd8.r1,
+      (unsigned)cmd8.payload[0],
+      (unsigned)cmd8.payload[1],
+      (unsigned)cmd8.payload[2],
+      (unsigned)cmd8.payload[3]);
+  print_serial(linha);
+
+  snprintf(linha, sizeof(linha), "sd init: %s\r\n",
+      initialize_card() ? "ok" : "falhou");
+  print_serial(linha);
+}
+
+static void command_sd_addressing(void) {
+  char linha[48];
+
+  snprintf(linha, sizeof(linha), "sd enderecamento: %s\r\n",
+      card_uses_block_addressing() ? "bloco" : "byte");
+  print_serial(linha);
+}
+
 static void command_unknown(void) {
   print_serial("comando nao conhecido, consulte a tabela com /help\r\n");
 }
@@ -267,6 +304,10 @@ void handle_command(const char* prompt, signal_state_t signal_state, reset_cause
     command_fault_list();
   } else if (strncmp(prompt, "/fault ", 7) == 0) {
     command_fault(prompt + 7);
+  } else if (strcmp(prompt, "/sd_init") == 0) {
+    command_sd_init();
+  } else if (strcmp(prompt, "/sd_addressing") == 0) {
+    command_sd_addressing();
   } else {
     command_unknown();
   }

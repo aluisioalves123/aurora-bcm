@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include <libopencm3/stm32/rcc.h>
 
 #include "hal/buttons/driver.h"
@@ -14,11 +16,24 @@
 #include "hal/watchdog/driver.h"
 #include "hal/reset_cause/driver.h"
 #include "hal/fault_handler/driver.h"
+#include "hal/sd_card/driver.h"
+#include "hal/spi/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
 
 static void rcc_setup(void) {
   rcc_clock_setup_pll(&rcc_hsi_configs[RCC_CLOCK_3V3_180MHZ]);
+}
+
+static void sd_card_bringup(void) {
+  char linha[64];
+
+  wake_up();
+  check_interface_condition();
+
+  snprintf(linha, sizeof(linha), "sd init: %s\r\n",
+      initialize_card() ? "ok" : "falhou");
+  print_serial(linha);
 }
 
 int main(void) {
@@ -31,6 +46,8 @@ int main(void) {
   uart_setup();
   adc_setup();
   i2c_setup();
+  spi_setup();
+  sd_card_bringup();
   watchdog_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");
