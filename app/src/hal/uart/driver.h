@@ -16,6 +16,8 @@ void uart_setup(void);
 // transmissor fica livre. nao bloqueia.
 void print_serial(const char *frase);
 
+void print_value(const char *badge, uint32_t value);
+
 // tira um byte do buffer circular, o que a interrupcao ja recebeu. nao
 // espera: se nao houver nada, volta com success = false
 read_result_t read_serial(void);

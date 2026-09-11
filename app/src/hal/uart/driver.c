@@ -2,6 +2,7 @@
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/stm32/usart.h>
+#include <stdio.h>
 
 #include "board.h"
 #include "hal/uart/driver.h"
@@ -109,6 +110,12 @@ void print_serial(const char *frase) {
   // a ISR se desabilita quando esvazia a fila, entao quem enfileira
   // precisa religar o pedido, senao ninguem vem buscar
   usart_enable_tx_interrupt(CONSOLE_UART);
+}
+
+void print_value(const char *badge, uint32_t value) {
+  char line[48];
+  snprintf(line, sizeof(line), "%s: %lu\r\n", badge, (unsigned long)value);
+  print_serial(line);
 }
 
 read_result_t read_serial(void) {
