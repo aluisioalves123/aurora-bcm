@@ -16,7 +16,7 @@
 #include "hal/watchdog/driver.h"
 #include "hal/reset_cause/driver.h"
 #include "hal/fault_handler/driver.h"
-#include "hal/sd_card/driver.h"
+#include "ff.h"
 #include "hal/spi/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
@@ -25,14 +25,24 @@ static void rcc_setup(void) {
   rcc_clock_setup_pll(&rcc_hsi_configs[RCC_CLOCK_3V3_180MHZ]);
 }
 
-static void sd_card_bringup(void) {
-  char linha[64];
+// A area de trabalho do FatFs vive enquanto o volume estiver montado: o
+// f_mount guarda este ponteiro e o usa em toda operacao de arquivo depois.
+static FATFS fatfs;
 
-  wake_up();
-  check_interface_condition();
+// Monta o volume FAT do cartao. O "" e a unidade 0, e o 1 manda montar agora
+// em vez de adiar para o primeiro acesso — assim o erro aparece aqui, e nao
+// mais tarde num f_open longe da causa.
+//
+// Depende do spi_setup, e vem antes do watchdog_setup: quem inicializa o
+// cartao e o disk_initialize, chamado la de dentro, e ele espera o cartao
+// responder. Nesse tempo ninguem estaria alimentando o watchdog.
+static void fatfs_mount(void) {
+  char linha[48];
 
-  snprintf(linha, sizeof(linha), "sd init: %s\r\n",
-      initialize_card() ? "ok" : "falhou");
+  FRESULT resultado = f_mount(&fatfs, "", 1);
+
+  snprintf(linha, sizeof(linha), "f_mount: %s (codigo %d)\r\n",
+      resultado == FR_OK ? "ok" : "falhou", (int)resultado);
   print_serial(linha);
 }
 
@@ -47,7 +57,7 @@ int main(void) {
   adc_setup();
   i2c_setup();
   spi_setup();
-  sd_card_bringup();
+  fatfs_mount();
   watchdog_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");

@@ -46,3 +46,12 @@ uint16_t spi_transfer(uint32_t spi, uint16_t data) {
   uint16_t response = spi_xfer(spi, data);
   return response;
 }
+
+void spi_set_clock_divider(uint8_t clock_divider) {
+  spi_disable(SPI2);
+
+  spi_set_baudrate_prescaler(SPI2, clock_divider);
+
+  spi_enable(SPI2);
+}
+

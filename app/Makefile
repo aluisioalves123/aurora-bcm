@@ -7,6 +7,7 @@ endif
 
 SRC_DIR     = src
 BUILD_DIR   = build
+LIB_DIR     = lib
 OPENCM3_DIR = ../libopencm3
 
 BINARY = firmware
@@ -31,6 +32,7 @@ LDFLAGS		+= -L$(OPENCM3_DIR)/lib
 
 DEFS		+= -I$(OPENCM3_DIR)/include
 DEFS		+= -I$(SRC_DIR)
+DEFS		+= -I$(LIB_DIR)/ff16/source
 
 ###############################################################################
 # Executables
@@ -58,6 +60,11 @@ CSTD		?= -std=c99
 # desatualiza quando um arquivo e criado, movido ou renomeado.
 SRCS		:= $(sort $(shell find $(SRC_DIR) -name '*.c'))
 OBJS		+= $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
+
+# terceiros: o FatFs vive em lib/ e compila junto, com os objetos em
+# build/lib/ para nao se misturar com os do projeto
+LIB_SRCS	:= $(sort $(shell find $(LIB_DIR) -path '*/source/*' -name '*.c'))
+OBJS		+= $(patsubst $(LIB_DIR)/%.c,$(BUILD_DIR)/lib/%.o,$(LIB_SRCS))
 
 ###############################################################################
 # C flags
@@ -157,6 +164,11 @@ print-%:
 	$(Q)$(LD) $(TGT_LDFLAGS) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(*).elf
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	@#printf "  CC      $<\n"
+	$(Q)mkdir -p $(dir $@)
+	$(Q)$(CC) $(TGT_CFLAGS) $(CFLAGS) $(TGT_CPPFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+$(BUILD_DIR)/lib/%.o: $(LIB_DIR)/%.c
 	@#printf "  CC      $<\n"
 	$(Q)mkdir -p $(dir $@)
 	$(Q)$(CC) $(TGT_CFLAGS) $(CFLAGS) $(TGT_CPPFLAGS) $(CPPFLAGS) -o $@ -c $<
