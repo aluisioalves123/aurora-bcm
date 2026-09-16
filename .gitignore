@@ -26,3 +26,6 @@ nbproject/
 
 # Shim local do python3 (caminho especifico desta maquina)
 tools/
+
+# Documentacao HTML do FatFs: 92 arquivos que nao entram no build
+app/lib/ff16/documents/
