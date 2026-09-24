@@ -29,3 +29,9 @@ tools/
 
 # Documentacao HTML do FatFs: 92 arquivos que nao entram no build
 app/lib/ff16/documents/
+
+# PlatformIO: toolchain e objetos do veiculo simulado
+.pio/
+
+# Local History do VS Code: 924 arquivos de rascunho do editor
+.history/
