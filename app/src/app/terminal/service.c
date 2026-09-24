@@ -345,6 +345,66 @@ static void command_log_read(void) {
   print_serial(linha);
 }
 
+// ---------------------------------------------------------------------------
+// TEMPORARIO - bancada. Dirige ou le um pino da porta B para conferir fiacao
+// com o multimetro. Apagar junto com a linha do dispatch.
+//
+//   /pin 13 1   PB13 em alto      /pin 1 0   PB1 em baixo
+//   /pin 14 r   le o nivel de PB14, com pull-up interno
+//
+// O pino sai da funcao alternativa ao virar saida, entao o periferico que o
+// usava para de funcionar ate o proximo reset. PB13, PB14 e PB15 sao o SPI do
+// cartao, PB1 e o CS, PB8 e PB9 sao o I2C, PB10 e o PWM do farol.
+//
+// Cuidado com o PB14 (MISO): dirigi-lo como saida com o cartao selecionado
+// poe dois transmissores na mesma linha. Com o CS em alto o cartao solta a
+// linha e nao ha disputa.
+static void command_pin(const char *argumento) {
+  char linha[64];
+  uint32_t numero = 0;
+  const char *p = argumento;
+
+  while (*p >= 0x30 && *p <= 0x39) {
+    numero = numero * 10 + (uint32_t)(*p - 0x30);
+    p++;
+  }
+
+  if (p == argumento || numero > 15) {
+    print_serial("uso: /pin <0-15> <0|1|r>\r\n");
+    return;
+  }
+
+  while (*p == 0x20) {
+    p++;
+  }
+
+  uint16_t mascara = (uint16_t)(1 << numero);
+
+  if (*p == 0x72) {  // r de ler
+    gpio_mode_setup(GPIOB, GPIO_MODE_INPUT, GPIO_PUPD_PULLUP, mascara);
+
+    snprintf(linha, sizeof(linha), "PB%lu le %d\r\n",
+        (unsigned long)numero, gpio_get(GPIOB, mascara) ? 1 : 0);
+  } else if (*p == 0x30 || *p == 0x31) {
+    gpio_mode_setup(GPIOB, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, mascara);
+
+    if (*p == 0x31) {
+      gpio_set(GPIOB, mascara);
+    } else {
+      gpio_clear(GPIOB, mascara);
+    }
+
+    snprintf(linha, sizeof(linha), "PB%lu em %s\r\n",
+        (unsigned long)numero, *p == 0x31 ? "alto" : "baixo");
+  } else {
+    print_serial("uso: /pin <0-15> <0|1|r>\r\n");
+    return;
+  }
+
+  print_serial(linha);
+}
+// ---------------------------------------------------------------------------
+
 static void command_unknown(void) {
   print_serial("comando nao conhecido, consulte a tabela com /help\r\n");
 }
@@ -376,6 +436,8 @@ void handle_command(const char* prompt, signal_state_t signal_state, reset_cause
     command_log();
   } else if (strcmp(prompt, "/log_read") == 0) {
     command_log_read();
+  } else if (strncmp(prompt, "/pin ", 5) == 0) {  // TEMPORARIO - bancada
+    command_pin(prompt + 5);
   } else {
     command_unknown();
   }
