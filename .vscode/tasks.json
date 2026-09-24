@@ -42,6 +42,33 @@
             "problemMatcher": []
         },
         {
+            "label": "vehicle: build",
+            "detail": "Compila o firmware do Arduino Nano (PlatformIO)",
+            "type": "process",
+            "command": "C:/Users/Aluisio/.platformio/penv/Scripts/platformio.exe",
+            "args": ["run"],
+            "options": { "cwd": "${workspaceFolder}/vehicle" },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "vehicle: flash",
+            "detail": "Grava no Nano via avrdude. Feche o Serial Monitor antes: o avrdude precisa da COM10 exclusiva",
+            "type": "process",
+            "command": "C:/Users/Aluisio/.platformio/penv/Scripts/platformio.exe",
+            "args": ["run", "-t", "upload"],
+            "options": { "cwd": "${workspaceFolder}/vehicle" },
+            "problemMatcher": []
+        },
+        {
+            "label": "vehicle: monitor",
+            "detail": "Abre o monitor serial do Nano a 115200",
+            "type": "process",
+            "command": "C:/Users/Aluisio/.platformio/penv/Scripts/platformio.exe",
+            "args": ["device", "monitor"],
+            "options": { "cwd": "${workspaceFolder}/vehicle" },
+            "problemMatcher": []
+        },
+        {
             "label": "libopencm3: build",
             "detail": "Compila a libopencm3 para stm32/f4 (so precisa rodar uma vez)",
             "type": "shell",

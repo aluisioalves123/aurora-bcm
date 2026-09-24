@@ -3,6 +3,13 @@
     {
       "name": "Aurora BCM",
       "path": "."
+    },
+    {
+      // Pasta propria para o PlatformIO reconhecer o platformio.ini
+      // como raiz de projeto e gerar o IntelliSense dele em
+      // vehicle/.vscode, sem tocar na configuracao do STM32.
+      "name": "Veiculo (Nano)",
+      "path": "vehicle"
     }
   ],
   "settings": {
