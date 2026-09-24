@@ -1,0 +1,173 @@
+PERFBOARD - MANUAL DE MONTAGEM
+============================================================
+Netlist: vehicle-sim.net
+Placa: 24 x 18 furos (58.42 x 43.18 mm)
+Redes: 9 roteadas, 0 incompletas
+
+O QUE VOCE VAI FAZER:
+  34 pontes de solda (furos vizinhos, sem fio — cada uma sai da mesma solda da junta ao lado)
+  19 fios retos, 421.9 mm no total, 9 atravessando a placa
+  55 pontos de solda (22 deles em terminal de componente)
+  8 vias (0 sem fio passando: precisam de um toco de terminal enfiado no furo)
+
+COORDENADAS: como estao impressas na SUA placa, vistas pelo lado dos
+componentes. Confira no desenho antes de comecar.
+
+
+-- ANTES DE COMEÇAR ----------------------------------------
+[ ]   1. Separe as peças e confira a placa
+          5 peças. A placa é de 24 x 18 furos. Vamos montar do MEIO para as
+          bordas: cada peça tira espaço das trilhas de cima e das vias,
+          então as ligações difíceis se fazem primeiro, enquanto ainda há
+          folga. E cada ilha de cobre é soldada UMA vez só: a ponte sai da
+          própria junta, não é um passo separado. As duas faces de um furo
+          são ilhas diferentes — soldar de um lado não atrapalha o outro.
+
+-- PEÇA 1 DE 5 — A1 ----------------------------------------
+[ ]   2. Coloque A1 e solde os terminais
+          Arduino_Nano: 30 pinos, 2 fileiras a 6 furos · girado 180°
+          - pino 1 no furo R17
+          - pino 2 no furo Q17
+          - pino 3 no furo P17
+          - pino 4 no furo O17
+          - pino 5 no furo N17
+          - pino 6 no furo M17
+          - pino 7 no furo L17
+          - pino 8 no furo K17
+          - pino 9 no furo J17
+          - pino 10 no furo I17
+          - pino 11 no furo H17
+          - pino 12 no furo G17
+          - pino 13 no furo F17
+          - pino 14 no furo E17
+          - pino 15 no furo D17
+          - pino 16 no furo D23
+          - pino 17 no furo E23
+          - pino 18 no furo F23
+          - pino 19 no furo G23
+          - pino 20 no furo H23
+          - pino 21 no furo I23
+          - pino 22 no furo J23
+          - pino 23 no furo K23
+          - pino 24 no furo L23
+          - pino 25 no furo M23
+          - pino 26 no furo N23
+          - pino 27 no furo O23
+          - pino 28 no furo P23
+          - pino 29 no furo Q23
+          - pino 30 no furo R23
+[ ]   3. Fio de 30.5 mm — rede +5V
+          Corte reto, 13 furos, de C18 a O18.
+[ ]   4. Fio de 17.8 mm — rede /D13_SPI_SCK
+          Corte reto, 8 furos, de B23 a B16 (atravessa para o outro lado).
+          - de uma vez só, por baixo, lado da solda: B23+C23, D23+C23 (rede /D13_SPI_SCK)
+          - NÃO solde B16 agora — o mesmo fio atravessa para o outro lado, no passo 6
+[ ]   5. Fio de 12.7 mm — rede /D2_MCP2515_INT
+          Corte reto, 6 furos, de I16 (vem do outro lado) a N16 (atravessa
+          para o outro lado) — lado dos componentes.
+          - de uma vez só, por baixo, lado da solda: N17+N16 (rede /D2_MCP2515_INT)
+          - NÃO solde I16 agora — o mesmo fio atravessa para o outro lado, no passo 20
+[ ]   6. Fio de 10.2 mm — rede /D13_SPI_SCK
+          Corte reto, 5 furos, de B16 (vem do outro lado) a F16 (atravessa
+          para o outro lado) — lado dos componentes.
+          - NÃO solde F16 agora — o mesmo fio atravessa para o outro lado, no passo 9
+[ ]   7. Fio de 7.6 mm — rede +5V
+          Corte reto, 4 furos, de O22 a O19.
+          - na MESMA solda de O19, puxe a ponte até O18 por baixo, lado da solda (rede +5V)
+          - na MESMA solda de O22, puxe a ponte até O23 por baixo, lado da solda (rede +5V)
+
+-- PEÇA 2 DE 5 — J2 ----------------------------------------
+[ ]   8. Coloque J2 e solde os terminais
+          Header 1x7 · girado 270° · afastamento ajustado por voce
+          - pino 1 no furo C12
+          - pino 2 no furo C11
+          - pino 3 no furo C10
+          - pino 4 no furo C9
+          - pino 5 no furo C8
+          - pino 6 no furo C7
+          - pino 7 no furo C6
+[ ]   9. Fio de 22.9 mm — rede /D13_SPI_SCK
+          Corte reto, 10 furos, de F16 (vem do outro lado) a F7.
+          - de uma vez só, por baixo, lado da solda: C7+D7, D7+E7, F7+E7 (rede /D13_SPI_SCK)
+[ ]  10. Fio de 20.3 mm — rede /D11_SPI_MOSI
+          Corte reto, 9 furos, de E16 a E8.
+          - de uma vez só, por baixo, lado da solda: C8+D8, E8+D8 (rede /D11_SPI_MOSI)
+          - na MESMA solda de E16, puxe a ponte até E17 por baixo, lado da solda (rede /D11_SPI_MOSI)
+[ ]  11. Fio de 17.8 mm — rede /D12_SPI_MISO
+          Corte reto, 8 furos, de D16 a D9.
+          - na MESMA solda de D9, puxe a ponte até C9 por baixo, lado da solda (rede /D12_SPI_MISO)
+          - na MESMA solda de D16, puxe a ponte até D17 por baixo, lado da solda (rede /D12_SPI_MISO)
+[ ]  12. Fio de 10.2 mm — rede +5V
+          Corte reto, 5 furos, de C17 a C13.
+          - na MESMA solda de C13, puxe a ponte até C12 por baixo, lado da solda (rede +5V)
+          - na MESMA solda de C17, puxe a ponte até C18 por baixo, lado da solda (rede +5V)
+[ ]  13. Fio de 10.2 mm — rede /D2_MCP2515_INT
+          Corte reto, 5 furos, de B10 (vem do outro lado) a B6 (atravessa
+          para o outro lado) — lado dos componentes.
+          - de uma vez só, por baixo, lado da solda: B10+C10 (rede /D2_MCP2515_INT)
+          - NÃO solde B6 agora — o mesmo fio atravessa para o outro lado, no passo 22
+
+-- PEÇA 3 DE 5 — SW2 ---------------------------------------
+[ ]  14. Coloque SW2 e solde os terminais
+          2 terminais, passo 3 furo(s) · girado 90°
+          - pino 1 no furo B2
+          - pino 2 no furo E2
+[ ]  15. Fio de 22.9 mm — rede GND
+          Corte reto, 10 furos, de A2 a A11.
+          - de uma vez só, por baixo, lado da solda: A11+B11, C11+B11 (rede GND)
+
+-- PEÇA 4 DE 5 — SW1 ---------------------------------------
+[ ]  16. Coloque SW1 e solde os terminais
+          2 terminais, passo 3 furo(s) · girado 90°
+          - pino 1 no furo H2
+          - pino 2 no furo K2
+[ ]  17. Fio de 35.6 mm — rede /D4_TURN_L_BTN
+          Corte reto, 15 furos, de L16 a L2.
+          - na MESMA solda de L16, puxe a ponte até L17 por baixo, lado da solda (rede /D4_TURN_L_BTN)
+[ ]  18. Fio de 35.6 mm — rede /D6_SERVICE_LIGHT_BTN
+          Corte reto, 15 furos, de J16 a J2.
+          - de uma vez só, por baixo, lado da solda: H2+I2, J2+I2 (rede /D6_SERVICE_LIGHT_BTN)
+          - na MESMA solda de J16, puxe a ponte até J17 por baixo, lado da solda (rede /D6_SERVICE_LIGHT_BTN)
+[ ]  19. Fio de 33.0 mm — rede /D5_TURN_R_BTN
+          Corte reto, 14 furos, de K16 a K3 (atravessa para o outro lado).
+          - na MESMA solda de K16, puxe a ponte até K17 por baixo, lado da solda (rede /D5_TURN_R_BTN)
+          - NÃO solde K3 agora — o mesmo fio atravessa para o outro lado, no passo 21
+[ ]  20. Fio de 25.4 mm — rede /D2_MCP2515_INT
+          Corte reto, 11 furos, de I16 (vem do outro lado) a I6.
+[ ]  21. Fio de 22.9 mm — rede /D5_TURN_R_BTN
+          Corte reto, 10 furos, de B3 (vem do outro lado) a K3 (atravessa
+          para o outro lado) — lado dos componentes.
+          - de uma vez só, por baixo, lado da solda: B3+B2 (rede /D5_TURN_R_BTN)
+[ ]  22. Fio de 15.2 mm — rede /D2_MCP2515_INT
+          Corte reto, 7 furos, de H6 a B6 (atravessa para o outro lado).
+          - na MESMA solda de H6, puxe a ponte até I6 por baixo, lado da solda (rede /D2_MCP2515_INT)
+
+-- PEÇA 5 DE 5 — SW3 ---------------------------------------
+[ ]  23. Coloque SW3 e solde os terminais
+          2 terminais, passo 3 furo(s) · girado 90°
+          - pino 1 no furo N2
+          - pino 2 no furo Q2
+          - de uma vez só, por baixo, lado da solda: L2+M2, N2+M2 (rede /D4_TURN_L_BTN)
+[ ]  24. Fio de 38.1 mm — rede GND
+          Corte reto, 16 furos, de O16 a O1.
+          - na MESMA solda de O16, puxe a ponte até O17 por baixo, lado da solda (rede GND)
+          - de uma vez só, por baixo, lado da solda: O2+P2, Q2+P2 (rede GND)
+[ ]  25. Fio de 33.0 mm — rede GND
+          Corte reto, 14 furos, de N1 a A1.
+          - na MESMA solda de A1, puxe a ponte até A2 por baixo, lado da solda (rede GND)
+          - na MESMA solda de E1, puxe a ponte até E2 por baixo, lado da solda (rede GND)
+          - na MESMA solda de K1, puxe a ponte até K2 por baixo, lado da solda (rede GND)
+          - na MESMA solda de N1, puxe a ponte até O1 por baixo, lado da solda (rede GND)
+
+-- PARA TERMINAR -------------------------------------------
+[ ]  26. Conferência final
+          Meça continuidade rede a rede e olhe o lado da solda contra a luz
+          procurando ponte que não devia existir.
+
+============================================================
+Perfboard Router — github.com/aluisioalves123/perfboard-router
+Rodando na sua maquina a busca vai ate estacionar sozinha, e o layout
+costuma sair bem mais facil de montar. Precisa so de Python 3.
+
+Gerado por Perfboard Router. Fio reto, ponte de solda e junta:
+nao ha nada para dobrar neste manual, e nenhum furo e soldado duas vezes.

@@ -1,0 +1,808 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 758.0 578.0" width="758.0" height="578.0" font-family="ui-sans-serif,system-ui,sans-serif" data-side="top" data-pad="34.00" data-scale="30.00" data-cols="24" data-rows="18">
+<title>Lado dos componentes</title>
+<rect x="0" y="0" width="758.0" height="578.0" rx="6" fill="#f6efdf" stroke="#c9b98f"/>
+<circle cx="34.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="34.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="64.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="94.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="124.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="154.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="184.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="214.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="244.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="274.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="304.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="334.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="364.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="394.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="424.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="454.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="484.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="514.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="544.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="574.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="604.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="634.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="664.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="694.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="34.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="64.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="94.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="124.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="154.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="184.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="214.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="244.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="274.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="304.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="334.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="364.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="394.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="424.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="454.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="484.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="514.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<circle cx="724.0" cy="544.0" r="4.8" fill="#fffdf7" stroke="#b9a97f" stroke-width="0.8"/>
+<text x="34.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">24</text>
+<text x="64.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">23</text>
+<text x="94.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">22</text>
+<text x="124.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">21</text>
+<text x="154.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">20</text>
+<text x="184.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">19</text>
+<text x="214.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">18</text>
+<text x="244.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">17</text>
+<text x="274.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">16</text>
+<text x="304.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">15</text>
+<text x="334.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">14</text>
+<text x="364.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">13</text>
+<text x="394.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">12</text>
+<text x="424.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">11</text>
+<text x="454.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">10</text>
+<text x="484.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">9</text>
+<text x="514.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">8</text>
+<text x="544.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">7</text>
+<text x="574.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">6</text>
+<text x="604.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">5</text>
+<text x="634.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">4</text>
+<text x="664.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">3</text>
+<text x="694.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">2</text>
+<text x="724.0" y="24.0" font-size="9" fill="#8a7a55" text-anchor="middle">1</text>
+<text x="24.0" y="34.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">A</text>
+<text x="24.0" y="64.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">B</text>
+<text x="24.0" y="94.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">C</text>
+<text x="24.0" y="124.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">D</text>
+<text x="24.0" y="154.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">E</text>
+<text x="24.0" y="184.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">F</text>
+<text x="24.0" y="214.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">G</text>
+<text x="24.0" y="244.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">H</text>
+<text x="24.0" y="274.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">I</text>
+<text x="24.0" y="304.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">J</text>
+<text x="24.0" y="334.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">K</text>
+<text x="24.0" y="364.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">L</text>
+<text x="24.0" y="394.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">M</text>
+<text x="24.0" y="424.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">N</text>
+<text x="24.0" y="454.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">O</text>
+<text x="24.0" y="484.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">P</text>
+<text x="24.0" y="514.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">Q</text>
+<text x="24.0" y="544.0" font-size="9" fill="#8a7a55" text-anchor="end" dominant-baseline="middle">R</text>
+<line x1="214.0" y1="394.0" x2="244.0" y2="394.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de M18 a M17</title></line>
+<line x1="214.0" y1="394.0" x2="244.0" y2="394.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="214.0" y1="514.0" x2="214.0" y2="484.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de Q18 a P18</title></line>
+<line x1="214.0" y1="514.0" x2="214.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="274.0" y1="94.0" x2="304.0" y2="94.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de C16 a C15</title></line>
+<line x1="274.0" y1="94.0" x2="304.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="274.0" y1="394.0" x2="244.0" y2="394.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de M16 a M17</title></line>
+<line x1="274.0" y1="394.0" x2="244.0" y2="394.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="304.0" y1="64.0" x2="304.0" y2="94.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de B15 a C15</title></line>
+<line x1="304.0" y1="64.0" x2="304.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="64.0" x2="544.0" y2="64.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+3V3 - ponte de solda (furos vizinhos, sem fio) de B6 a B7</title></line>
+<line x1="574.0" y1="64.0" x2="544.0" y2="64.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="244.0" y1="454.0" x2="244.0" y2="484.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+5V - ponte de solda (furos vizinhos, sem fio) de O17 a P17</title></line>
+<line x1="244.0" y1="454.0" x2="244.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="244.0" y1="514.0" x2="244.0" y2="484.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+5V - ponte de solda (furos vizinhos, sem fio) de Q17 a P17</title></line>
+<line x1="244.0" y1="514.0" x2="244.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="484.0" y1="454.0" x2="484.0" y2="424.0" stroke="#d33" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>+5V - ponte de solda (furos vizinhos, sem fio) de O9 a N9</title></line>
+<line x1="484.0" y1="454.0" x2="484.0" y2="424.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="184.0" x2="604.0" y2="184.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANH - ponte de solda (furos vizinhos, sem fio) de F6 a F5</title></line>
+<line x1="574.0" y1="184.0" x2="604.0" y2="184.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="724.0" y1="184.0" x2="724.0" y2="214.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANH - ponte de solda (furos vizinhos, sem fio) de F1 a G1</title></line>
+<line x1="724.0" y1="184.0" x2="724.0" y2="214.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="724.0" y1="244.0" x2="724.0" y2="214.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANH - ponte de solda (furos vizinhos, sem fio) de H1 a G1</title></line>
+<line x1="724.0" y1="244.0" x2="724.0" y2="214.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="724.0" y1="274.0" x2="724.0" y2="244.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANH - ponte de solda (furos vizinhos, sem fio) de I1 a H1</title></line>
+<line x1="724.0" y1="274.0" x2="724.0" y2="244.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="214.0" x2="574.0" y2="244.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANL - ponte de solda (furos vizinhos, sem fio) de G6 a H6</title></line>
+<line x1="574.0" y1="214.0" x2="574.0" y2="244.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="334.0" x2="574.0" y2="304.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANL - ponte de solda (furos vizinhos, sem fio) de K6 a J6</title></line>
+<line x1="574.0" y1="334.0" x2="574.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="724.0" y1="334.0" x2="694.0" y2="334.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/CANL - ponte de solda (furos vizinhos, sem fio) de K1 a K2</title></line>
+<line x1="724.0" y1="334.0" x2="694.0" y2="334.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="364.0" y1="274.0" x2="364.0" y2="304.0" stroke="#808000" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA0_BATT_ADC - ponte de solda (furos vizinhos, sem fio) de I13 a J13</title></line>
+<line x1="364.0" y1="274.0" x2="364.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="364.0" y1="304.0" x2="364.0" y2="334.0" stroke="#808000" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA0_BATT_ADC - ponte de solda (furos vizinhos, sem fio) de J13 a K13</title></line>
+<line x1="364.0" y1="304.0" x2="364.0" y2="334.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="364.0" y1="514.0" x2="364.0" y2="484.0" stroke="#808000" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA0_BATT_ADC - ponte de solda (furos vizinhos, sem fio) de Q13 a P13</title></line>
+<line x1="364.0" y1="514.0" x2="364.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="544.0" y1="154.0" x2="574.0" y2="154.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de E7 a E6</title></line>
+<line x1="544.0" y1="154.0" x2="574.0" y2="154.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="544.0" y1="364.0" x2="574.0" y2="364.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de L7 a L6</title></line>
+<line x1="544.0" y1="364.0" x2="574.0" y2="364.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="604.0" y1="514.0" x2="604.0" y2="544.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de Q5 a R5</title></line>
+<line x1="604.0" y1="514.0" x2="604.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="604.0" y1="544.0" x2="634.0" y2="544.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de R5 a R4</title></line>
+<line x1="604.0" y1="544.0" x2="634.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="664.0" y1="364.0" x2="634.0" y2="364.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de L3 a L4</title></line>
+<line x1="664.0" y1="364.0" x2="634.0" y2="364.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="664.0" y1="544.0" x2="634.0" y2="544.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA11_CRX - ponte de solda (furos vizinhos, sem fio) de R3 a R4</title></line>
+<line x1="664.0" y1="544.0" x2="634.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="514.0" y1="124.0" x2="544.0" y2="124.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA12_CTX - ponte de solda (furos vizinhos, sem fio) de D8 a D7</title></line>
+<line x1="514.0" y1="124.0" x2="544.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="514.0" y1="394.0" x2="544.0" y2="394.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA12_CTX - ponte de solda (furos vizinhos, sem fio) de M8 a M7</title></line>
+<line x1="514.0" y1="394.0" x2="544.0" y2="394.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="124.0" x2="544.0" y2="124.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA12_CTX - ponte de solda (furos vizinhos, sem fio) de D6 a D7</title></line>
+<line x1="574.0" y1="124.0" x2="544.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="634.0" y1="394.0" x2="634.0" y2="424.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA12_CTX - ponte de solda (furos vizinhos, sem fio) de M4 a N4</title></line>
+<line x1="634.0" y1="394.0" x2="634.0" y2="424.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="634.0" y1="514.0" x2="634.0" y2="484.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA12_CTX - ponte de solda (furos vizinhos, sem fio) de Q4 a P4</title></line>
+<line x1="634.0" y1="514.0" x2="634.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="34.0" y1="424.0" x2="64.0" y2="424.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de N24 a N23</title></line>
+<line x1="34.0" y1="424.0" x2="64.0" y2="424.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="34.0" y1="514.0" x2="64.0" y2="514.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de Q24 a Q23</title></line>
+<line x1="34.0" y1="514.0" x2="64.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="94.0" y1="514.0" x2="64.0" y2="514.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de Q22 a Q23</title></line>
+<line x1="94.0" y1="514.0" x2="64.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="124.0" y1="514.0" x2="124.0" y2="544.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de Q21 a R21</title></line>
+<line x1="124.0" y1="514.0" x2="124.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="124.0" y1="514.0" x2="94.0" y2="514.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de Q21 a Q22</title></line>
+<line x1="124.0" y1="514.0" x2="94.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="394.0" y1="514.0" x2="394.0" y2="544.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - ponte de solda (furos vizinhos, sem fio) de Q12 a R12</title></line>
+<line x1="394.0" y1="514.0" x2="394.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="274.0" y1="484.0" x2="274.0" y2="514.0" stroke="#f032e6" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA5_TURN_R - ponte de solda (furos vizinhos, sem fio) de P16 a Q16</title></line>
+<line x1="274.0" y1="484.0" x2="274.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="304.0" y1="514.0" x2="304.0" y2="484.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PA6_TURN_L - ponte de solda (furos vizinhos, sem fio) de Q15 a P15</title></line>
+<line x1="304.0" y1="514.0" x2="304.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="334.0" y1="334.0" x2="334.0" y2="364.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB10_SERVICE_LIGHT - ponte de solda (furos vizinhos, sem fio) de K14 a L14</title></line>
+<line x1="334.0" y1="334.0" x2="334.0" y2="364.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="334.0" y1="514.0" x2="334.0" y2="484.0" stroke="#4363d8" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB10_SERVICE_LIGHT - ponte de solda (furos vizinhos, sem fio) de Q14 a P14</title></line>
+<line x1="334.0" y1="514.0" x2="334.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="484.0" y1="484.0" x2="484.0" y2="514.0" stroke="#808000" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB13_SPI_SCK - ponte de solda (furos vizinhos, sem fio) de P9 a Q9</title></line>
+<line x1="484.0" y1="484.0" x2="484.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="454.0" x2="574.0" y2="484.0" stroke="#808000" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB13_SPI_SCK - ponte de solda (furos vizinhos, sem fio) de O6 a P6</title></line>
+<line x1="574.0" y1="454.0" x2="574.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="514.0" y1="484.0" x2="514.0" y2="454.0" stroke="#f58231" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB14_SPI_MISO - ponte de solda (furos vizinhos, sem fio) de P8 a O8</title></line>
+<line x1="514.0" y1="484.0" x2="514.0" y2="454.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="514.0" y1="514.0" x2="514.0" y2="484.0" stroke="#f58231" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB14_SPI_MISO - ponte de solda (furos vizinhos, sem fio) de Q8 a P8</title></line>
+<line x1="514.0" y1="514.0" x2="514.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="544.0" y1="484.0" x2="544.0" y2="454.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB15_SPI_MOSI - ponte de solda (furos vizinhos, sem fio) de P7 a O7</title></line>
+<line x1="544.0" y1="484.0" x2="544.0" y2="454.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="544.0" y1="514.0" x2="544.0" y2="484.0" stroke="#5a8f29" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB15_SPI_MOSI - ponte de solda (furos vizinhos, sem fio) de Q7 a P7</title></line>
+<line x1="544.0" y1="514.0" x2="544.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="514.0" x2="574.0" y2="544.0" stroke="#e6194b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB1_SD_CS - ponte de solda (furos vizinhos, sem fio) de Q6 a R6</title></line>
+<line x1="574.0" y1="514.0" x2="574.0" y2="544.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="604.0" y1="454.0" x2="604.0" y2="484.0" stroke="#e6194b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB1_SD_CS - ponte de solda (furos vizinhos, sem fio) de O5 a P5</title></line>
+<line x1="604.0" y1="454.0" x2="604.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="304.0" y1="184.0" x2="334.0" y2="184.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB8_LM75_SCL - ponte de solda (furos vizinhos, sem fio) de F15 a F14</title></line>
+<line x1="304.0" y1="184.0" x2="334.0" y2="184.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="334.0" y1="184.0" x2="364.0" y2="184.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB8_LM75_SCL - ponte de solda (furos vizinhos, sem fio) de F14 a F13</title></line>
+<line x1="334.0" y1="184.0" x2="364.0" y2="184.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="394.0" y1="184.0" x2="364.0" y2="184.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB8_LM75_SCL - ponte de solda (furos vizinhos, sem fio) de F12 a F13</title></line>
+<line x1="394.0" y1="184.0" x2="364.0" y2="184.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="454.0" y1="484.0" x2="454.0" y2="514.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB8_LM75_SCL - ponte de solda (furos vizinhos, sem fio) de P10 a Q10</title></line>
+<line x1="454.0" y1="484.0" x2="454.0" y2="514.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="304.0" y1="154.0" x2="334.0" y2="154.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB9_LM75_SDA - ponte de solda (furos vizinhos, sem fio) de E15 a E14</title></line>
+<line x1="304.0" y1="154.0" x2="334.0" y2="154.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="424.0" y1="154.0" x2="394.0" y2="154.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB9_LM75_SDA - ponte de solda (furos vizinhos, sem fio) de E11 a E12</title></line>
+<line x1="424.0" y1="154.0" x2="394.0" y2="154.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="424.0" y1="514.0" x2="424.0" y2="484.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>/PB9_LM75_SDA - ponte de solda (furos vizinhos, sem fio) de Q11 a P11</title></line>
+<line x1="424.0" y1="514.0" x2="424.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="34.0" y1="124.0" x2="64.0" y2="124.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de D24 a D23</title></line>
+<line x1="34.0" y1="124.0" x2="64.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="34.0" y1="244.0" x2="64.0" y2="244.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de H24 a H23</title></line>
+<line x1="34.0" y1="244.0" x2="64.0" y2="244.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="34.0" y1="304.0" x2="64.0" y2="304.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de J24 a J23</title></line>
+<line x1="34.0" y1="304.0" x2="64.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="94.0" x2="64.0" y2="124.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de C23 a D23</title></line>
+<line x1="64.0" y1="94.0" x2="64.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="304.0" x2="64.0" y2="334.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de J23 a K23</title></line>
+<line x1="64.0" y1="304.0" x2="64.0" y2="334.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="334.0" x2="64.0" y2="364.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de K23 a L23</title></line>
+<line x1="64.0" y1="334.0" x2="64.0" y2="364.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="394.0" x2="64.0" y2="364.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de M23 a L23</title></line>
+<line x1="64.0" y1="394.0" x2="64.0" y2="364.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="184.0" y1="94.0" x2="154.0" y2="94.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de C19 a C20</title></line>
+<line x1="184.0" y1="94.0" x2="154.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="184.0" y1="394.0" x2="184.0" y2="424.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de M19 a N19</title></line>
+<line x1="184.0" y1="394.0" x2="184.0" y2="424.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="184.0" y1="514.0" x2="184.0" y2="484.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de Q19 a P19</title></line>
+<line x1="184.0" y1="514.0" x2="184.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="304.0" y1="124.0" x2="334.0" y2="124.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de D15 a D14</title></line>
+<line x1="304.0" y1="124.0" x2="334.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="454.0" y1="304.0" x2="484.0" y2="304.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de J10 a J9</title></line>
+<line x1="454.0" y1="304.0" x2="484.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="454.0" y1="454.0" x2="454.0" y2="424.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de O10 a N10</title></line>
+<line x1="454.0" y1="454.0" x2="454.0" y2="424.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="484.0" y1="94.0" x2="514.0" y2="94.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de C9 a C8</title></line>
+<line x1="484.0" y1="94.0" x2="514.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="484.0" y1="124.0" x2="454.0" y2="124.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de D9 a D10</title></line>
+<line x1="484.0" y1="124.0" x2="454.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="484.0" y1="304.0" x2="484.0" y2="274.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de J9 a I9</title></line>
+<line x1="484.0" y1="304.0" x2="484.0" y2="274.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="544.0" y1="94.0" x2="514.0" y2="94.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de C7 a C8</title></line>
+<line x1="544.0" y1="94.0" x2="514.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="574.0" y1="94.0" x2="544.0" y2="94.0" stroke="#3b3b3b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>GND - ponte de solda (furos vizinhos, sem fio) de C6 a C7</title></line>
+<line x1="574.0" y1="94.0" x2="544.0" y2="94.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="454.0" x2="64.0" y2="484.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D1-A) - ponte de solda (furos vizinhos, sem fio) de O23 a P23</title></line>
+<line x1="64.0" y1="454.0" x2="64.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="154.0" y1="484.0" x2="124.0" y2="484.0" stroke="#bc5090" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D1-A) - ponte de solda (furos vizinhos, sem fio) de P20 a P21</title></line>
+<line x1="154.0" y1="484.0" x2="124.0" y2="484.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="154.0" x2="94.0" y2="154.0" stroke="#3cb44b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D2-A) - ponte de solda (furos vizinhos, sem fio) de E23 a E22</title></line>
+<line x1="64.0" y1="154.0" x2="94.0" y2="154.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="124.0" y1="154.0" x2="94.0" y2="154.0" stroke="#3cb44b" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D2-A) - ponte de solda (furos vizinhos, sem fio) de E21 a E22</title></line>
+<line x1="124.0" y1="154.0" x2="94.0" y2="154.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="64.0" y1="274.0" x2="94.0" y2="274.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D3-A) - ponte de solda (furos vizinhos, sem fio) de I23 a I22</title></line>
+<line x1="64.0" y1="274.0" x2="94.0" y2="274.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="214.0" y1="274.0" x2="214.0" y2="304.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D3-A) - ponte de solda (furos vizinhos, sem fio) de I18 a J18</title></line>
+<line x1="214.0" y1="274.0" x2="214.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="214.0" y1="334.0" x2="214.0" y2="304.0" stroke="#00a3a3" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(D3-A) - ponte de solda (furos vizinhos, sem fio) de K18 a J18</title></line>
+<line x1="214.0" y1="334.0" x2="214.0" y2="304.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="244.0" y1="94.0" x2="244.0" y2="124.0" stroke="#9a6324" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(J2-Pin_2) - ponte de solda (furos vizinhos, sem fio) de C17 a D17</title></line>
+<line x1="244.0" y1="94.0" x2="244.0" y2="124.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="244.0" y1="274.0" x2="244.0" y2="244.0" stroke="#9a6324" stroke-width="15.4" stroke-linecap="round" opacity="0.23" stroke-dasharray="5 4"><title>Net-(J2-Pin_2) - ponte de solda (furos vizinhos, sem fio) de I17 a H17</title></line>
+<line x1="244.0" y1="274.0" x2="244.0" y2="244.0" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity="0.12" pointer-events="none"/>
+<line x1="424.0" y1="484.0" x2="424.0" y2="154.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PB9_LM75_SDA - fio reto de 27.9 mm de P11 a E11</title></line>
+<line x1="274.0" y1="94.0" x2="274.0" y2="394.0" stroke="#d33" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>+3V3 - fio reto de 25.4 mm de C16 a M16</title></line>
+<line x1="394.0" y1="184.0" x2="394.0" y2="484.0" stroke="#bc5090" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PB8_LM75_SCL - fio reto de 25.4 mm de F12 a P12</title></line>
+<line x1="514.0" y1="124.0" x2="514.0" y2="394.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA12_CTX - fio reto de 22.9 mm de D8 a M8</title></line>
+<line x1="124.0" y1="544.0" x2="394.0" y2="544.0" stroke="#4363d8" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - fio reto de 22.9 mm de R21 a R12</title></line>
+<line x1="544.0" y1="64.0" x2="304.0" y2="64.0" stroke="#d33" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>+3V3 - fio reto de 20.3 mm de B7 a B15</title></line>
+<line x1="544.0" y1="154.0" x2="544.0" y2="364.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA11_CRX - fio reto de 17.8 mm de E7 a L7</title></line>
+<line x1="664.0" y1="364.0" x2="664.0" y2="544.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA11_CRX - fio reto de 15.2 mm de L3 a R3</title></line>
+<line x1="304.0" y1="484.0" x2="304.0" y2="304.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA6_TURN_L - fio reto de 15.2 mm de P15 a J15</title></line>
+<line x1="34.0" y1="124.0" x2="34.0" y2="304.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 15.2 mm de D24 a J24</title></line>
+<line x1="484.0" y1="274.0" x2="484.0" y2="94.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 15.2 mm de I9 a C9</title></line>
+<line x1="364.0" y1="334.0" x2="364.0" y2="484.0" stroke="#808000" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA0_BATT_ADC - fio reto de 12.7 mm de K13 a P13</title></line>
+<line x1="64.0" y1="244.0" x2="214.0" y2="244.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 12.7 mm de H23 a H18</title></line>
+<line x1="604.0" y1="184.0" x2="724.0" y2="184.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/CANH - fio reto de 10.2 mm de F5 a F1</title></line>
+<line x1="694.0" y1="334.0" x2="574.0" y2="334.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/CANL - fio reto de 10.2 mm de K2 a K6</title></line>
+<line x1="334.0" y1="364.0" x2="334.0" y2="484.0" stroke="#4363d8" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PB10_SERVICE_LIGHT - fio reto de 10.2 mm de L14 a P14</title></line>
+<line x1="64.0" y1="394.0" x2="184.0" y2="394.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 10.2 mm de M23 a M19</title></line>
+<line x1="454.0" y1="424.0" x2="454.0" y2="304.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 10.2 mm de N10 a J10</title></line>
+<line x1="334.0" y1="124.0" x2="454.0" y2="124.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 10.2 mm de D14 a D10</title></line>
+<line x1="94.0" y1="274.0" x2="214.0" y2="274.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>Net-(D3-A) - fio reto de 10.2 mm de I22 a I18</title></line>
+<line x1="244.0" y1="124.0" x2="244.0" y2="244.0" stroke="#9a6324" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>Net-(J2-Pin_2) - fio reto de 10.2 mm de D17 a H17</title></line>
+<line x1="214.0" y1="484.0" x2="214.0" y2="394.0" stroke="#d33" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>+3V3 - fio reto de 7.6 mm de P18 a M18</title></line>
+<line x1="544.0" y1="394.0" x2="634.0" y2="394.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA12_CTX - fio reto de 7.6 mm de M7 a M4</title></line>
+<line x1="34.0" y1="424.0" x2="34.0" y2="514.0" stroke="#4363d8" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA1_SHUNT_ADC - fio reto de 7.6 mm de N24 a Q24</title></line>
+<line x1="154.0" y1="94.0" x2="64.0" y2="94.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 7.6 mm de C20 a C23</title></line>
+<line x1="484.0" y1="424.0" x2="484.0" y2="364.0" stroke="#d33" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>+5V - fio reto de 5.1 mm de N9 a L9</title></line>
+<line x1="574.0" y1="244.0" x2="574.0" y2="304.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/CANL - fio reto de 5.1 mm de H6 a J6</title></line>
+<line x1="574.0" y1="364.0" x2="634.0" y2="364.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA11_CRX - fio reto de 5.1 mm de L6 a L4</title></line>
+<line x1="634.0" y1="484.0" x2="634.0" y2="424.0" stroke="#5a8f29" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PA12_CTX - fio reto de 5.1 mm de P4 a N4</title></line>
+<line x1="334.0" y1="154.0" x2="394.0" y2="154.0" stroke="#00a3a3" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>/PB9_LM75_SDA - fio reto de 5.1 mm de E14 a E12</title></line>
+<line x1="184.0" y1="424.0" x2="184.0" y2="484.0" stroke="#3b3b3b" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>GND - fio reto de 5.1 mm de N19 a P19</title></line>
+<line x1="124.0" y1="484.0" x2="64.0" y2="484.0" stroke="#bc5090" stroke-width="3.7" stroke-linecap="round" opacity="0.26" stroke-dasharray="5 4"><title>Net-(D1-A) - fio reto de 5.1 mm de P21 a P23</title></line>
+<g class="comp" data-ref="D1" data-locked="1" data-rot="90"><rect x="21.4" y="411.4" width="85.2" height="55.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#e8b53a" stroke-width="2.0"/>
+<text x="64.0" y="439.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">D1</text></g>
+<g class="comp" data-ref="D2" data-locked="1" data-rot="90"><rect x="21.4" y="111.4" width="85.2" height="55.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#e8b53a" stroke-width="2.0"/>
+<text x="64.0" y="139.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">D2</text></g>
+<g class="comp" data-ref="D3" data-locked="1" data-rot="270"><rect x="21.4" y="261.4" width="85.2" height="55.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#e8b53a" stroke-width="2.0"/>
+<text x="64.0" y="289.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">D3</text></g>
+<g class="comp" data-ref="J1" data-locked="1" data-rot="270"><rect x="171.4" y="501.4" width="475.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#e8b53a" stroke-width="2.0"/>
+<text x="409.0" y="514.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J1</text></g>
+<g class="comp" data-ref="J2" data-locked="0" data-rot="0"><rect x="141.4" y="21.4" width="145.2" height="145.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="214.0" y="94.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J2</text></g>
+<g class="comp" data-ref="J3" data-locked="0" data-rot="0"><rect x="291.4" y="81.4" width="265.2" height="145.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="424.0" y="154.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J3</text></g>
+<g class="comp" data-ref="J4" data-locked="0" data-rot="270"><rect x="381.4" y="381.4" width="295.2" height="85.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="529.0" y="424.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J4</text></g>
+<g class="comp" data-ref="J5" data-locked="0" data-rot="0"><rect x="561.4" y="51.4" width="175.2" height="175.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="649.0" y="139.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J5</text></g>
+<g class="comp" data-ref="J6" data-locked="0" data-rot="270"><rect x="651.4" y="231.4" width="145.2" height="145.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="724.0" y="304.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">J6</text></g>
+<g class="comp" data-ref="R1" data-locked="0" data-rot="180"><rect x="141.4" y="471.4" width="145.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="214.0" y="484.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R1</text></g>
+<g class="comp" data-ref="R2" data-locked="0" data-rot="270"><rect x="111.4" y="381.4" width="25.2" height="145.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="124.0" y="454.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R2</text></g>
+<g class="comp" data-ref="R3" data-locked="0" data-rot="180"><rect x="111.4" y="291.4" width="145.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="184.0" y="304.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R3</text></g>
+<g class="comp" data-ref="R4" data-locked="0" data-rot="180"><rect x="201.4" y="321.4" width="145.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="274.0" y="334.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R4</text></g>
+<g class="comp" data-ref="R5" data-locked="0" data-rot="0"><rect x="231.4" y="261.4" width="145.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="304.0" y="274.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R5</text></g>
+<g class="comp" data-ref="R6" data-locked="0" data-rot="0"><rect x="351.4" y="291.4" width="145.2" height="25.2" rx="4" fill="#2e3440" fill-opacity="0.82" stroke="#1b1f27" stroke-width="1.0"/>
+<text x="424.0" y="304.0" font-size="13.0" fill="#f2f2f2" text-anchor="middle" dominant-baseline="middle" pointer-events="none">R6</text></g>
+<line x1="244.0" y1="364.0" x2="244.0" y2="394.0" stroke="#d33" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>+5V - ponte de solda (furos vizinhos, sem fio) de L17 a M17</title></line>
+<line x1="244.0" y1="364.0" x2="244.0" y2="394.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="244.0" y1="304.0" x2="274.0" y2="304.0" stroke="#5a8f29" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>/PA6_TURN_L - ponte de solda (furos vizinhos, sem fio) de J17 a J16</title></line>
+<line x1="244.0" y1="304.0" x2="274.0" y2="304.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="304.0" y1="304.0" x2="274.0" y2="304.0" stroke="#5a8f29" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>/PA6_TURN_L - ponte de solda (furos vizinhos, sem fio) de J15 a J16</title></line>
+<line x1="304.0" y1="304.0" x2="274.0" y2="304.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="664.0" y1="484.0" x2="664.0" y2="514.0" stroke="#e6194b" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>/PB1_SD_CS - ponte de solda (furos vizinhos, sem fio) de P3 a Q3</title></line>
+<line x1="664.0" y1="484.0" x2="664.0" y2="514.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="664.0" y1="544.0" x2="664.0" y2="514.0" stroke="#e6194b" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>/PB1_SD_CS - ponte de solda (furos vizinhos, sem fio) de R3 a Q3</title></line>
+<line x1="664.0" y1="544.0" x2="664.0" y2="514.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="484.0" y1="244.0" x2="484.0" y2="274.0" stroke="#3b3b3b" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>GND - ponte de solda (furos vizinhos, sem fio) de H9 a I9</title></line>
+<line x1="484.0" y1="244.0" x2="484.0" y2="274.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="484.0" y1="304.0" x2="484.0" y2="274.0" stroke="#3b3b3b" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>GND - ponte de solda (furos vizinhos, sem fio) de J9 a I9</title></line>
+<line x1="484.0" y1="304.0" x2="484.0" y2="274.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="124.0" y1="304.0" x2="124.0" y2="274.0" stroke="#3cb44b" stroke-width="19.2" stroke-linecap="round" opacity="0.85"><title>Net-(D2-A) - ponte de solda (furos vizinhos, sem fio) de J21 a I21</title></line>
+<line x1="124.0" y1="304.0" x2="124.0" y2="274.0" stroke="#fff" stroke-width="4.2" stroke-linecap="round" opacity="0.43" pointer-events="none"/>
+<line x1="214.0" y1="244.0" x2="484.0" y2="244.0" stroke="#3b3b3b" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>GND - fio reto de 22.9 mm de H18 a H9</title></line>
+<line x1="244.0" y1="364.0" x2="484.0" y2="364.0" stroke="#d33" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>+5V - fio reto de 20.3 mm de L17 a L9</title></line>
+<line x1="124.0" y1="274.0" x2="124.0" y2="154.0" stroke="#3cb44b" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>Net-(D2-A) - fio reto de 10.2 mm de I21 a E21</title></line>
+<line x1="484.0" y1="484.0" x2="574.0" y2="484.0" stroke="#808000" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>/PB13_SPI_SCK - fio reto de 7.6 mm de P9 a P6</title></line>
+<line x1="574.0" y1="544.0" x2="664.0" y2="544.0" stroke="#e6194b" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>/PB1_SD_CS - fio reto de 7.6 mm de R6 a R3</title></line>
+<line x1="244.0" y1="394.0" x2="244.0" y2="454.0" stroke="#d33" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>+5V - fio reto de 5.1 mm de M17 a O17</title></line>
+<line x1="604.0" y1="484.0" x2="664.0" y2="484.0" stroke="#e6194b" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>/PB1_SD_CS - fio reto de 5.1 mm de P5 a P3</title></line>
+<line x1="394.0" y1="484.0" x2="454.0" y2="484.0" stroke="#bc5090" stroke-width="4.7" stroke-linecap="round" opacity="0.95"><title>/PB8_LM75_SCL - fio reto de 5.1 mm de P12 a P10</title></line>
+
+<circle cx="244.0" cy="364.0" r="7.8" fill="none" stroke="#d33" stroke-width="1.5" opacity="0.95"><title>+5V - junta de solda em L17 (L), alcancando M17, L16</title></circle>
+<circle cx="244.0" cy="394.0" r="7.8" fill="none" stroke="#d33" stroke-width="1.5" opacity="0.95"><title>+5V - junta de solda em M17 (linha), alcancando L17, N17</title></circle>
+<circle cx="244.0" cy="304.0" r="7.8" fill="none" stroke="#5a8f29" stroke-width="1.5" opacity="0.95"><title>/PA6_TURN_L - junta de solda em J17 (pino), alcancando J16</title></circle>
+<circle cx="274.0" cy="304.0" r="7.8" fill="none" stroke="#5a8f29" stroke-width="1.5" opacity="0.95"><title>/PA6_TURN_L - junta de solda em J16 (linha), alcancando J17, J15</title></circle>
+<circle cx="664.0" cy="484.0" r="7.8" fill="none" stroke="#e6194b" stroke-width="1.5" opacity="0.95"><title>/PB1_SD_CS - junta de solda em P3 (L), alcancando P4, Q3</title></circle>
+<circle cx="664.0" cy="514.0" r="7.8" fill="none" stroke="#e6194b" stroke-width="1.5" opacity="0.95"><title>/PB1_SD_CS - junta de solda em Q3 (linha), alcancando P3, R3</title></circle>
+<circle cx="664.0" cy="544.0" r="7.8" fill="none" stroke="#e6194b" stroke-width="1.5" opacity="0.95"><title>/PB1_SD_CS - junta de solda em R3 (L), alcancando R4, Q3</title></circle>
+<circle cx="484.0" cy="244.0" r="7.8" fill="none" stroke="#3b3b3b" stroke-width="1.5" opacity="0.95"><title>GND - junta de solda em H9 (L), alcancando H10, I9</title></circle>
+<circle cx="484.0" cy="274.0" r="7.8" fill="none" stroke="#3b3b3b" stroke-width="1.5" opacity="0.95"><title>GND - junta de solda em I9 (linha), alcancando H9, J9</title></circle>
+<circle cx="484.0" cy="304.0" r="7.8" fill="none" stroke="#3b3b3b" stroke-width="1.5" opacity="0.95"><title>GND - junta de solda em J9 (pino), alcancando I9</title></circle>
+<circle cx="124.0" cy="274.0" r="7.8" fill="none" stroke="#3cb44b" stroke-width="1.5" opacity="0.95"><title>Net-(D2-A) - junta de solda em I21 (linha), alcancando H21, J21</title></circle>
+<circle cx="124.0" cy="304.0" r="7.8" fill="none" stroke="#3cb44b" stroke-width="1.5" opacity="0.95"><title>Net-(D2-A) - junta de solda em J21 (pino), alcancando I21</title></circle>
+<g pointer-events="none" opacity="1.00"><circle cx="244.0" cy="454.0" r="10.2" fill="none" stroke="#d33" stroke-width="2.7"/><circle cx="244.0" cy="454.0" r="3.3" fill="#d33"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="484.0" cy="364.0" r="10.2" fill="none" stroke="#d33" stroke-width="2.7"/><circle cx="484.0" cy="364.0" r="3.3" fill="#d33"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="304.0" cy="304.0" r="10.2" fill="none" stroke="#5a8f29" stroke-width="2.7"/><circle cx="304.0" cy="304.0" r="3.3" fill="#5a8f29"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="484.0" cy="484.0" r="10.2" fill="none" stroke="#808000" stroke-width="2.7"/><circle cx="484.0" cy="484.0" r="3.3" fill="#808000"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="574.0" cy="484.0" r="10.2" fill="none" stroke="#808000" stroke-width="2.7"/><circle cx="574.0" cy="484.0" r="3.3" fill="#808000"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="574.0" cy="544.0" r="10.2" fill="none" stroke="#e6194b" stroke-width="2.7"/><circle cx="574.0" cy="544.0" r="3.3" fill="#e6194b"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="604.0" cy="484.0" r="10.2" fill="none" stroke="#e6194b" stroke-width="2.7"/><circle cx="604.0" cy="484.0" r="3.3" fill="#e6194b"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="454.0" cy="484.0" r="10.2" fill="none" stroke="#bc5090" stroke-width="2.7"/><circle cx="454.0" cy="484.0" r="3.3" fill="#bc5090"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="394.0" cy="484.0" r="10.2" fill="none" stroke="#bc5090" stroke-width="2.7"/><circle cx="394.0" cy="484.0" r="3.3" fill="#bc5090"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="214.0" cy="244.0" r="10.2" fill="none" stroke="#3b3b3b" stroke-width="2.7"/><circle cx="214.0" cy="244.0" r="3.3" fill="#3b3b3b"/></g>
+<g pointer-events="none" opacity="1.00"><circle cx="124.0" cy="154.0" r="10.2" fill="none" stroke="#3cb44b" stroke-width="2.7"/><circle cx="124.0" cy="154.0" r="3.3" fill="#3cb44b"/></g>
+<circle cx="64.0" cy="424.0" r="7.2" fill="#4363d8" stroke="#fff" stroke-width="1.0"><title>D1 pino 1 - furo N23 - rede /PA1_SHUNT_ADC</title></circle>
+<circle cx="64.0" cy="454.0" r="7.2" fill="#bc5090" stroke="#fff" stroke-width="1.0"><title>D1 pino 2 - furo O23 - rede Net-(D1-A)</title></circle>
+<circle cx="64.0" cy="124.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>D2 pino 1 - furo D23 - rede GND</title></circle>
+<circle cx="64.0" cy="154.0" r="7.2" fill="#3cb44b" stroke="#fff" stroke-width="1.0"><title>D2 pino 2 - furo E23 - rede Net-(D2-A)</title></circle>
+<circle cx="64.0" cy="304.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>D3 pino 1 - furo J23 - rede GND</title></circle>
+<circle cx="64.0" cy="274.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>D3 pino 2 - furo I23 - rede Net-(D3-A)</title></circle>
+<circle cx="184.0" cy="514.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>J1 pino 1 - furo Q19 - rede GND</title></circle>
+<circle cx="454.0" cy="514.0" r="7.2" fill="#bc5090" stroke="#fff" stroke-width="1.0"><title>J1 pino 10 - furo Q10 - rede /PB8_LM75_SCL</title></circle>
+<circle cx="484.0" cy="514.0" r="7.2" fill="#808000" stroke="#fff" stroke-width="1.0"><title>J1 pino 11 - furo Q9 - rede /PB13_SPI_SCK</title></circle>
+<circle cx="514.0" cy="514.0" r="7.2" fill="#f58231" stroke="#fff" stroke-width="1.0"><title>J1 pino 12 - furo Q8 - rede /PB14_SPI_MISO</title></circle>
+<circle cx="544.0" cy="514.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J1 pino 13 - furo Q7 - rede /PB15_SPI_MOSI</title></circle>
+<circle cx="574.0" cy="514.0" r="7.2" fill="#e6194b" stroke="#fff" stroke-width="1.0"><title>J1 pino 14 - furo Q6 - rede /PB1_SD_CS</title></circle>
+<circle cx="604.0" cy="514.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>J1 pino 15 - furo Q5 - rede /PA11_CRX</title></circle>
+<circle cx="634.0" cy="514.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J1 pino 16 - furo Q4 - rede /PA12_CTX</title></circle>
+<circle cx="214.0" cy="514.0" r="7.2" fill="#d33" stroke="#fff" stroke-width="1.0"><title>J1 pino 2 - furo Q18 - rede +3V3</title></circle>
+<circle cx="244.0" cy="514.0" r="7.2" fill="#d33" stroke="#fff" stroke-width="1.0"><title>J1 pino 3 - furo Q17 - rede +5V</title></circle>
+<circle cx="274.0" cy="514.0" r="7.2" fill="#f032e6" stroke="#fff" stroke-width="1.0"><title>J1 pino 4 - furo Q16 - rede /PA5_TURN_R</title></circle>
+<circle cx="304.0" cy="514.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J1 pino 5 - furo Q15 - rede /PA6_TURN_L</title></circle>
+<circle cx="334.0" cy="514.0" r="7.2" fill="#4363d8" stroke="#fff" stroke-width="1.0"><title>J1 pino 6 - furo Q14 - rede /PB10_SERVICE_LIGHT</title></circle>
+<circle cx="364.0" cy="514.0" r="7.2" fill="#808000" stroke="#fff" stroke-width="1.0"><title>J1 pino 7 - furo Q13 - rede /PA0_BATT_ADC</title></circle>
+<circle cx="394.0" cy="514.0" r="7.2" fill="#4363d8" stroke="#fff" stroke-width="1.0"><title>J1 pino 8 - furo Q12 - rede /PA1_SHUNT_ADC</title></circle>
+<circle cx="424.0" cy="514.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>J1 pino 9 - furo Q11 - rede /PB9_LM75_SDA</title></circle>
+<circle cx="184.0" cy="94.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>J2 pino 1 - furo C19 - rede GND</title></circle>
+<circle cx="244.0" cy="94.0" r="7.2" fill="#9a6324" stroke="#fff" stroke-width="1.0"><title>J2 pino 2 - furo C17 - rede Net-(J2-Pin_2)</title></circle>
+<circle cx="304.0" cy="94.0" r="7.2" fill="#d33" stroke="#fff" stroke-width="1.0"><title>J3 pino 1 - furo C15 - rede +3V3</title></circle>
+<circle cx="304.0" cy="124.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>J3 pino 2 - furo D15 - rede GND</title></circle>
+<circle cx="304.0" cy="154.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>J3 pino 3 - furo E15 - rede /PB9_LM75_SDA</title></circle>
+<circle cx="304.0" cy="184.0" r="7.2" fill="#bc5090" stroke="#fff" stroke-width="1.0"><title>J3 pino 4 - furo F15 - rede /PB8_LM75_SCL</title></circle>
+<circle cx="304.0" cy="214.0" r="7.2" fill="#f032e6" stroke="#fff" stroke-width="1.0"><title>J3 pino 5 - furo G15 - rede /LM75_OS</title></circle>
+<circle cx="454.0" cy="454.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>J4 pino 1 - furo O10 - rede GND</title></circle>
+<circle cx="484.0" cy="454.0" r="7.2" fill="#d33" stroke="#fff" stroke-width="1.0"><title>J4 pino 2 - furo O9 - rede +5V</title></circle>
+<circle cx="514.0" cy="454.0" r="7.2" fill="#f58231" stroke="#fff" stroke-width="1.0"><title>J4 pino 3 - furo O8 - rede /PB14_SPI_MISO</title></circle>
+<circle cx="544.0" cy="454.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J4 pino 4 - furo O7 - rede /PB15_SPI_MOSI</title></circle>
+<circle cx="574.0" cy="454.0" r="7.2" fill="#808000" stroke="#fff" stroke-width="1.0"><title>J4 pino 5 - furo O6 - rede /PB13_SPI_SCK</title></circle>
+<circle cx="604.0" cy="454.0" r="7.2" fill="#e6194b" stroke="#fff" stroke-width="1.0"><title>J4 pino 6 - furo O5 - rede /PB1_SD_CS</title></circle>
+<circle cx="574.0" cy="64.0" r="7.2" fill="#d33" stroke="#fff" stroke-width="1.0"><title>J5 pino 1 - furo B6 - rede +3V3</title></circle>
+<circle cx="574.0" cy="94.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>J5 pino 2 - furo C6 - rede GND</title></circle>
+<circle cx="574.0" cy="124.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J5 pino 3 - furo D6 - rede /PA12_CTX</title></circle>
+<circle cx="574.0" cy="154.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>J5 pino 4 - furo E6 - rede /PA11_CRX</title></circle>
+<circle cx="574.0" cy="184.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J5 pino 5 - furo F6 - rede /CANH</title></circle>
+<circle cx="574.0" cy="214.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J5 pino 6 - furo G6 - rede /CANL</title></circle>
+<circle cx="724.0" cy="334.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J6 pino 1 - furo K1 - rede /CANL</title></circle>
+<circle cx="724.0" cy="274.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>J6 pino 2 - furo I1 - rede /CANH</title></circle>
+<circle cx="274.0" cy="484.0" r="7.2" fill="#f032e6" stroke="#fff" stroke-width="1.0"><title>R1 pino 1 - furo P16 - rede /PA5_TURN_R</title></circle>
+<circle cx="154.0" cy="484.0" r="7.2" fill="#bc5090" stroke="#fff" stroke-width="1.0"><title>R1 pino 2 - furo P20 - rede Net-(D1-A)</title></circle>
+<circle cx="124.0" cy="514.0" r="7.2" fill="#4363d8" stroke="#fff" stroke-width="1.0"><title>R2 pino 1 - furo Q21 - rede /PA1_SHUNT_ADC</title></circle>
+<circle cx="124.0" cy="394.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>R2 pino 2 - furo M21 - rede GND</title></circle>
+<circle cx="244.0" cy="304.0" r="7.2" fill="#5a8f29" stroke="#fff" stroke-width="1.0"><title>R3 pino 1 - furo J17 - rede /PA6_TURN_L</title></circle>
+<circle cx="124.0" cy="304.0" r="7.2" fill="#3cb44b" stroke="#fff" stroke-width="1.0"><title>R3 pino 2 - furo J21 - rede Net-(D2-A)</title></circle>
+<circle cx="334.0" cy="334.0" r="7.2" fill="#4363d8" stroke="#fff" stroke-width="1.0"><title>R4 pino 1 - furo K14 - rede /PB10_SERVICE_LIGHT</title></circle>
+<circle cx="214.0" cy="334.0" r="7.2" fill="#00a3a3" stroke="#fff" stroke-width="1.0"><title>R4 pino 2 - furo K18 - rede Net-(D3-A)</title></circle>
+<circle cx="244.0" cy="274.0" r="7.2" fill="#9a6324" stroke="#fff" stroke-width="1.0"><title>R5 pino 1 - furo I17 - rede Net-(J2-Pin_2)</title></circle>
+<circle cx="364.0" cy="274.0" r="7.2" fill="#808000" stroke="#fff" stroke-width="1.0"><title>R5 pino 2 - furo I13 - rede /PA0_BATT_ADC</title></circle>
+<circle cx="364.0" cy="304.0" r="7.2" fill="#808000" stroke="#fff" stroke-width="1.0"><title>R6 pino 1 - furo J13 - rede /PA0_BATT_ADC</title></circle>
+<circle cx="484.0" cy="304.0" r="7.2" fill="#3b3b3b" stroke="#fff" stroke-width="1.0"><title>R6 pino 2 - furo J9 - rede GND</title></circle>
+<text x="6.0" y="570.0" font-size="11" fill="#6b5f42">Lado dos componentes</text>
+</svg>
