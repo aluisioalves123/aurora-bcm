@@ -20,6 +20,7 @@
 #include "ff.h"
 #include "hal/spi/driver.h"
 #include "hal/can/driver.h"
+#include "app/config/service.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -87,6 +88,10 @@ int main(void) {
     .length   = 0,
     .complete = false
   };
+  // configuracao programavel, lida da flash uma vez no boot. mora aqui pelo
+  // mesmo motivo do resto do estado: a vista, e nao escondida num global
+  config_t config = load_config();
+
   signal_state_t signal_state = SIGNAL_OFF;
   service_light_state_t service_light_state = SERVICE_LIGHT_OFF;
   leds_should_blink_t leds_should_blink = which_leds_blink(signal_state);
@@ -100,7 +105,7 @@ int main(void) {
     message = check_for_messages(message, read_serial());
 
     if (message.complete) {
-      handle_command(message.message, signal_state, last_reset_cause);
+      handle_command(message.message, signal_state, last_reset_cause, &config);
     }
 
     if (now != last_scan) { // entra aqui a cada 1 ms

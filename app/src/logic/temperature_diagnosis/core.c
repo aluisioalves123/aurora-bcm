@@ -1,9 +1,11 @@
 #include "logic/temperature_diagnosis/core.h"
 
-temperature_diagnosis_t temperature_diagnosis(int32_t millicelsius, bool sensor_ok) {
+temperature_diagnosis_t temperature_diagnosis(int32_t millicelsius,
+                                              bool sensor_ok,
+                                              int32_t high_threshold_millicelsius) {
   if (!sensor_ok) {
     return TEMPERATURE_UNKNOWN;
-  } else if (millicelsius > TEMPERATURE_HIGH_THRESHOLD_MILLICELSIUS) {
+  } else if (millicelsius > high_threshold_millicelsius) {
     return TEMPERATURE_HIGH;
   } else {
     return TEMPERATURE_OK;

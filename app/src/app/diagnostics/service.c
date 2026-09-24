@@ -26,10 +26,12 @@ lamp_diagnosis_t lamp_diagnosis_update(void) {
   return diagnosis;
 }
 
-temperature_diagnosis_t temperature_diagnosis_update(temperature_read_t reading) {
+temperature_diagnosis_t temperature_diagnosis_update(temperature_read_t reading,
+                                                     int32_t high_threshold_millicelsius) {
   int32_t millicelsius = reading.success ? temperature((int16_t)reading.value) : 0;
 
-  temperature_diagnosis_t diagnosis = temperature_diagnosis(millicelsius, reading.success);
+  temperature_diagnosis_t diagnosis =
+      temperature_diagnosis(millicelsius, reading.success, high_threshold_millicelsius);
 
   // o sensor calado e uma falha por si so, independente do valor: e o que
   // diferencia "esta frio" de "nao sei dizer"

@@ -17,6 +17,7 @@
 #include "logic/fault_table/core.h"
 #include "logic/fault_table/core.h"
 #include "logic/reset_cause/core.h"
+#include "app/config/service.h"
 #include "ff.h"
 #include "hal/reset_cause/driver.h"
 
@@ -42,10 +43,12 @@ static void command_help(void) {
       "  /fault_list      tipos de falha que podem ser consultados\r\n"
       "  /fault <tipo>    estado de uma falha: ativa, ocorrencias e quando\r\n"
       "  /log             acrescenta uma linha em log.txt no cartao\r\n"
-      "  /log_read        mostra o conteudo de log.txt\r\n");
+      "  /log_read        mostra o conteudo de log.txt\r\n"
+      "  /config <n> <v>  grava uma configuracao na flash (ex: /config temperature_limit 24.5)\r\n");
 }
 
-static void command_status(signal_state_t signal_state, reset_cause_t last_reset_cause) {
+static void command_status(signal_state_t signal_state, reset_cause_t last_reset_cause,
+                           int32_t temperature_limit_millicelsius) {
   char status[320];
   uint32_t uptime_seconds = get_ticks() / 1000;
   uint32_t service_light = service_light_level();
@@ -65,7 +68,7 @@ static void command_status(signal_state_t signal_state, reset_cause_t last_reset
   char temperature_text[24];
   temperature_read_t reading = temperature_read();
 
-  temperature_diagnosis_update(reading);
+  temperature_diagnosis_update(reading, temperature_limit_millicelsius);
 
   if (reading.success) {
     int32_t millicelsius = temperature((int16_t)reading.value);
@@ -155,11 +158,11 @@ static void command_lamp_status(void) {
   print_serial("\r\n");
 }
 
-static void command_temperature_raw(void) {
+static void command_temperature_raw(int32_t temperature_limit_millicelsius) {
   char temperature_val[48];
   temperature_read_t reading = temperature_read();
 
-  temperature_diagnosis_update(reading);
+  temperature_diagnosis_update(reading, temperature_limit_millicelsius);
 
   if (!reading.success) {
     print_serial("temperature raw: sensor nao respondeu\r\n");
@@ -176,11 +179,11 @@ static void command_temperature_raw(void) {
   print_serial(temperature_val);
 }
 
-static void command_temperature(void) {
+static void command_temperature(int32_t temperature_limit_millicelsius) {
   char temperature_string[48];
   temperature_read_t reading = temperature_read();
 
-  temperature_diagnosis_update(reading);
+  temperature_diagnosis_update(reading, temperature_limit_millicelsius);
 
   if (!reading.success) {
     print_serial("temperature: sensor nao respondeu\r\n");
@@ -405,17 +408,142 @@ static void command_pin(const char *argumento) {
 }
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Configuracao programavel: /config <nome> <valor>
+//
+//   /config temperature_limit 24.5      limiar de temperatura, em graus Celsius
+//
+// Grava na flash, entao o valor sobrevive a reset e a desligar a placa. Com a
+// flash virgem ou a assinatura errada, o load_config devolve os padroes.
+//
+// Quando aparecer a segunda configuracao isto pede uma tabela de nome ->
+// campo, do mesmo jeito que os comandos do cartao SD. Com uma so, a escada
+// ainda e mais legivel do que a tabela.
+static void command_config(const char *argumento, config_t *config) {
+  char linha[80];
+  char nome[32];
+  const char *p = argumento;
+  size_t i = 0;
+
+  // o nome vai ate o primeiro espaco
+  while (*p != 0x20 && *p != 0 && i < sizeof(nome) - 1) {
+    nome[i++] = *p++;
+  }
+  nome[i] = 0;
+
+  while (*p == 0x20) {
+    p++;
+  }
+
+  if (nome[0] == 0 || *p == 0) {
+    print_serial("uso: /config <nome> <valor>\r\n");
+    print_serial("  temperature_limit  limiar de temperatura, em graus Celsius (ex: 24.5)\r\n");
+    return;
+  }
+
+  // o tecnico manda em graus Celsius, com ponto decimal: 24.5. quem converte
+  // para milicelsius e aqui, porque milicelsius e unidade de codigo, nao de
+  // painel. nada abaixo desta funcao volta a ver grau
+  bool negativo = (*p == 0x2D);
+  if (negativo) {
+    p++;
+  }
+
+  int32_t inteiro = 0;
+  const char *digitos = p;
+
+  while (*p >= 0x30 && *p <= 0x39) {
+    inteiro = inteiro * 10 + (int32_t)(*p - 0x30);
+    p++;
+
+    // seis digitos ja passam de qualquer temperatura concebivel, e mais que
+    // isso estouraria o int32 depois de multiplicar por mil
+    if (p - digitos > 6) {
+      print_serial("valor invalido: numero grande demais\r\n");
+      return;
+    }
+  }
+
+  if (p == digitos) {
+    print_serial("valor invalido: esperado graus Celsius, ex: 24.5\r\n");
+    return;
+  }
+
+  // a parte decimal vale ate tres casas, que e o que milicelsius comporta
+  int32_t milesimos = 0;
+
+  if (*p == 0x2E) {
+    p++;
+
+    if (!(*p >= 0x30 && *p <= 0x39)) {
+      print_serial("valor invalido: ponto decimal sem digito depois\r\n");
+      return;
+    }
+
+    int32_t casa = 100;
+
+    while (*p >= 0x30 && *p <= 0x39) {
+      if (casa == 0) {
+        print_serial("valor invalido: no maximo tres casas decimais\r\n");
+        return;
+      }
+      milesimos += (int32_t)(*p - 0x30) * casa;
+      casa /= 10;
+      p++;
+    }
+  }
+
+  // lixo depois do numero: nao da para adivinhar o que o tecnico quis
+  if (*p != 0) {
+    print_serial("valor invalido: esperado graus Celsius, ex: 24.5\r\n");
+    return;
+  }
+
+  int32_t valor = inteiro * 1000 + milesimos;
+
+  if (negativo) {
+    valor = -valor;
+  }
+
+  if (strcmp(nome, "temperature_limit") != 0) {
+    print_serial("configuracao desconhecida\r\n");
+    print_serial("  temperature_limit  limiar de temperatura, em graus Celsius (ex: 24.5)\r\n");
+    return;
+  }
+
+  config->temperature_millicelsius_limit = valor;
+
+  // so anuncia depois de a flash confirmar: dizer que gravou sem ter gravado
+  // seria pior do que falhar
+  if (!save_config(*config)) {
+    print_serial("config: gravacao na flash falhou\r\n");
+    return;
+  }
+
+  // devolve em grau, na mesma unidade que ele digitou: confirmacao em
+  // milicelsius obrigaria o tecnico a conferir a conta de cabeca
+  int32_t absoluto = (valor < 0) ? -valor : valor;
+
+  snprintf(linha, sizeof(linha),
+      "config: temperature_limit = %s%ld.%03ld C\r\n",
+      (valor < 0) ? "-" : "",
+      (long)(absoluto / 1000), (long)(absoluto % 1000));
+  print_serial(linha);
+}
+// ---------------------------------------------------------------------------
+
 static void command_unknown(void) {
   print_serial("comando nao conhecido, consulte a tabela com /help\r\n");
 }
 
-void handle_command(const char* prompt, signal_state_t signal_state, reset_cause_t last_reset_cause) {
+void handle_command(const char* prompt, signal_state_t signal_state,
+                    reset_cause_t last_reset_cause, config_t *config) {
   if (strcmp(prompt, "/hello") == 0) {
     command_hello();
   } else if (strcmp(prompt, "/help") == 0) {
     command_help();
   } else if (strcmp(prompt, "/status") == 0) {
-    command_status(signal_state, last_reset_cause);
+    command_status(signal_state, last_reset_cause, config->temperature_millicelsius_limit);
   } else if (strcmp(prompt, "/adc_val") == 0) {
     command_adc_val();
   } else if (strcmp(prompt, "/battery_val") == 0) {
@@ -425,9 +553,9 @@ void handle_command(const char* prompt, signal_state_t signal_state, reset_cause
   } else if (strcmp(prompt, "/lamp_status") == 0) {
     command_lamp_status();
   } else if (strcmp(prompt, "/temperature_raw") == 0) {
-    command_temperature_raw();
+    command_temperature_raw(config->temperature_millicelsius_limit);
   } else if (strcmp(prompt, "/temperature") == 0) {
-    command_temperature();
+    command_temperature(config->temperature_millicelsius_limit);
   } else if (strcmp(prompt, "/fault_list") == 0) {
     command_fault_list();
   } else if (strncmp(prompt, "/fault ", 7) == 0) {
@@ -436,6 +564,8 @@ void handle_command(const char* prompt, signal_state_t signal_state, reset_cause
     command_log();
   } else if (strcmp(prompt, "/log_read") == 0) {
     command_log_read();
+  } else if (strncmp(prompt, "/config ", 8) == 0) {
+    command_config(prompt + 8, config);
   } else if (strncmp(prompt, "/pin ", 5) == 0) {  // TEMPORARIO - bancada
     command_pin(prompt + 5);
   } else {

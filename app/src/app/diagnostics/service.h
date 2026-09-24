@@ -17,7 +17,8 @@ lamp_diagnosis_t lamp_diagnosis_update(void);
 // Recebe a leitura ja feita em vez de ler de novo: quem chama costuma
 // precisar do valor tambem, e cada leitura e uma transacao I2C. Assim o
 // numero que aparece no console e exatamente o que gerou o diagnostico.
-temperature_diagnosis_t temperature_diagnosis_update(temperature_read_t reading);
+temperature_diagnosis_t temperature_diagnosis_update(temperature_read_t reading,
+                                                     int32_t high_threshold_millicelsius);
 
 // Tambem recebe o valor pronto: quem chama ja converteu para milivolts
 // e costuma imprimir o mesmo numero.
