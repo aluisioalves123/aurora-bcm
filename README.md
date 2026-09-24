@@ -17,6 +17,16 @@ uma leitura no meio deixa o cartão travado até perder a alimentação.
 A especificação completa — 10 funções, 5 restrições e as etapas — está em
 **[DIRETRIZES.md](DIRETRIZES.md)**.
 
+![A bancada montada](docs/bancada.jpg)
+
+À esquerda a **NUCLEO-F446RE**, o módulo. No meio, a perfboard do BCM: cartão SD
+por SPI, as duas setas e o farol de trabalho. À direita, o **veículo simulado** —
+um Arduino Nano com MCP2515 e três botões, fazendo o papel do painel.
+
+Os dois fios verdes entre as placas são o **barramento CAN**. É por eles que
+apertar um botão da direita acende uma seta da esquerda — e é o único caminho
+entre os dois lados: nenhum sinal atravessa por fora do barramento.
+
 ## O que foi estudado, e onde mora
 
 | Protocolo / conceito | Onde está | O que o projeto mostra |
