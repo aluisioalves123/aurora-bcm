@@ -10,6 +10,7 @@
 #include "logic/message/core.h"
 #include "logic/service_light/core.h"
 #include "logic/turn_signal/core.h"
+#include "logic/vehicle_bus.h"
 #include "app/terminal/service.h"
 #include "hal/adc/driver.h"
 #include "hal/i2c/driver.h"
@@ -18,6 +19,7 @@
 #include "hal/fault_handler/driver.h"
 #include "ff.h"
 #include "hal/spi/driver.h"
+#include "hal/can/driver.h"
 
 #define BLINK_INTERVAL_MS (333)
 
@@ -58,6 +60,7 @@ int main(void) {
   i2c_setup();
   spi_setup();
   fatfs_mount();
+  can_setup();
   watchdog_setup();
 
   print_serial("Aurora BCM - console de diagnostico\r\n");
@@ -104,7 +107,20 @@ int main(void) {
       last_scan = now;
 
       debounce = next_debounce(debounce, read_buttons());
-      button_states_t buttons = debounced_buttons(debounce);
+      button_states_t debounced = debounced_buttons(debounce);
+      
+      can_frame_t can_frame;
+      button_states_t buttons = { 0 };
+      bool received_frame = can_read(&can_frame);
+      if (received_frame) {
+        buttons = (button_states_t){
+          .turn_signal_right_button_pressed = (can_frame.id == TURN_SIGNAL_RIGHT_MESSAGE_ID),
+          .turn_signal_left_button_pressed  = (can_frame.id == TURN_SIGNAL_LEFT_MESSAGE_ID),
+          .hazard_button_pressed            = (can_frame.id == HAZARD_MESSAGE_ID)
+        };
+      }
+
+      buttons.service_light_button_pressed = debounced.service_light_button_pressed;
 
       signal_state_t next_state = next_signal_state(signal_state, buttons, previous_buttons);
       service_light_state_t next_service_light = next_service_light_state(service_light_state, buttons, previous_buttons);

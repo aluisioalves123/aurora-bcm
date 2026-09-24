@@ -62,4 +62,10 @@
 #define SD_CARD_CS_PORT               (GPIOB)
 #define SD_CARD_CS_PIN                (GPIO1)
 
+// can
+#define CAN_PORT                      (GPIOA)
+#define CAN_TX_PIN                    (GPIO11)
+#define CAN_RX_PIN                    (GPIO12)
+#define CAN_PRESCALER                 (5)
+
 #endif // BOARD_H
