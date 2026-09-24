@@ -26,9 +26,29 @@
             "command": "export PATH=$CUBE_GCC:$CUBE_MAKE:$PATH && make -C app clean",
             "problemMatcher": []
         },
+        // ---------------------------------------------------------------
+        // As tasks de gravacao chamam o OpenOCD, que vem dentro do CubeIDE.
+        // Elas sao "type": "process" com os argumentos em array porque aspas
+        // dentro de string unica somem ao passar pelo bash no Windows.
+        //
+        // Lendo os argumentos de cima para baixo:
+        //
+        //   -s <pasta>    onde procurar os arquivos .cfg citados abaixo
+        //   -f interface/stlink-dap.cfg    qual sonda: o ST-Link da Nucleo
+        //   -c transport select dapdirect_swd    falar SWD, os dois fios
+        //   -f target/stm32f4x.cfg    qual chip do outro lado
+        //   -c program <arquivo> verify reset exit    grava, confere lendo
+        //                 de volta, reseta a placa e fecha o OpenOCD
+        //
+        // Sem o "exit" no fim, o OpenOCD fica aberto esperando um GDB.
+        //
+        // O ENDERECO DE GRAVACAO NAO ESTA AQUI. Com um .elf ele vem de dentro
+        // do arquivo, do ORIGIN declarado no linkerscript de cada projeto.
+        // Para mudar onde algo e gravado, mexa no linkerscript, nao na task.
+        // ---------------------------------------------------------------
         {
             "label": "flash",
-            "detail": "Grava na placa via ST-Link (OpenOCD)",
+            "detail": "Grava a aplicacao, no endereco que o app/linkerscript.ld declara",
             "type": "process",
             "command": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.4.500.202604080855/tools/bin/openocd.exe",
             "args": [
@@ -66,6 +86,35 @@
             "command": "C:/Users/Aluisio/.platformio/penv/Scripts/platformio.exe",
             "args": ["device", "monitor"],
             "options": { "cwd": "${workspaceFolder}/vehicle" },
+            "problemMatcher": []
+        },
+        {
+            "label": "bootloader: build",
+            "detail": "Compila bootloader/bootloader.elf",
+            "type": "shell",
+            "command": "export PATH=$CUBE_GCC:$CUBE_MAKE:$PATH && make -C bootloader && arm-none-eabi-size bootloader/bootloader.elf",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "bootloader: clean",
+            "detail": "Limpa os artefatos do bootloader",
+            "type": "shell",
+            "command": "export PATH=$CUBE_GCC:$CUBE_MAKE:$PATH && make -C bootloader clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "bootloader: flash",
+            "detail": "Grava o bootloader, no endereco que o bootloader/linkerscript.ld declara",
+            "type": "process",
+            "command": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.4.500.202604080855/tools/bin/openocd.exe",
+            "args": [
+                "-s", "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.debug.openocd_2.3.400.202606220929/resources/openocd/st_scripts",
+                "-f", "interface/stlink-dap.cfg",
+                "-c", "transport select dapdirect_swd",
+                "-f", "target/stm32f4x.cfg",
+                "-c", "program bootloader/bootloader.elf verify reset exit"
+            ],
+            "dependsOn": "bootloader: build",
             "problemMatcher": []
         },
         {

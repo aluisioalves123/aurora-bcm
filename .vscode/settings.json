@@ -3,5 +3,20 @@
     "cortex-debug.armToolchainPath": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin",
     "cortex-debug.gdbPath": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/arm-none-eabi-gdb.exe",
     "cortex-debug.openocdPath": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.4.500.202604080855/tools/bin/openocd.exe",
-    "cortex-debug.variableUseNaturalFormat": false
+    "cortex-debug.variableUseNaturalFormat": false,
+
+    // Git Bash como terminal padrao deste projeto.
+    //
+    // Nao e preferencia: os Makefiles montam a lista de fontes com "find -name",
+    // e o Windows tem um find.exe proprio que nao aceita -name. No PowerShell o
+    // find errado ganha, a lista sai vazia, e o build morre com "undefined
+    // reference to main" — um erro que nao tem nada a ver com a causa.
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "path": "C:/Program Files/Git/bin/bash.exe",
+            "args": ["--login", "-i"],
+            "icon": "terminal-bash"
+        }
+    }
 }
