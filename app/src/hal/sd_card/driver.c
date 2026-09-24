@@ -58,6 +58,22 @@ static void sd_deselect(void) {
   spi_transfer(SD_CARD_SPI , SD_DUMMY_BYTE);
 }
 
+// o cartao so para de despejar um bloco depois de receber o clock do bloco
+// inteiro: levantar o cs nao cancela nada. uma leitura abandonada no meio
+// deixa ele atravessado ate perder a alimentacao, e reset do mcu nao limpa
+// esse estado porque o cartao continua energizado
+static void sd_drain(void) {
+  sd_select();
+
+  // 512 de dado + 2 de crc, com folga: cobre o pior caso, o cartao
+  // nao ter enviado nada ainda. depois que ele termina, so sai 0xFF
+  for (uint32_t i = 0; i < SD_BLOCK_SIZE + 8; i++) {
+    spi_transfer(SD_CARD_SPI , SD_DUMMY_BYTE);
+  }
+
+  sd_deselect();
+}
+
 static sd_response_t send_cmd(sd_command_t command) {
   const sd_command_spec_t spec = SD_COMMANDS[command];
 
@@ -277,11 +293,13 @@ void sd_clock_speed_up(void) {
 
     if (read_response != SD_READ_ACCEPTED) {
       spi_set_clock_divider(i + 1);
+      sd_drain();
       return;
     }
 
     if (response[510] != 0x55 || response[511] != 0xAA) {
       spi_set_clock_divider(i + 1);
+      sd_drain();
       return;
     }
   }

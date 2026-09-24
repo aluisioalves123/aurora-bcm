@@ -13,7 +13,16 @@ void spi_setup(void) {
     SPI_PORT,
     GPIO_MODE_AF,
     GPIO_PUPD_NONE,
-    SPI_SCK_PIN | SPI_MOSI_PIN | SPI_MISO_PIN
+    SPI_SCK_PIN | SPI_MOSI_PIN
+  );
+
+  // o cartao poe o miso em alta impedancia enquanto o cs esta alto. sem pull-up
+  // a linha flutua e o nivel de repouso vira sorte: o padrao sd pede pull-up aqui
+  gpio_mode_setup(
+    SPI_PORT,
+    GPIO_MODE_AF,
+    GPIO_PUPD_PULLUP,
+    SPI_MISO_PIN
   );
 
   gpio_mode_setup(
