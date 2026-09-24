@@ -1,30 +1,30 @@
 # Aurora BCM
 
 Um compilado de estudos dos principais protocolos da indústria de embarcados e
-dos conceitos fundamentais que os sustentam — **UART, I2C, SPI, CAN**, máquinas
+dos conceitos fundamentais que os sustentam: **UART, I2C, SPI, CAN**, máquinas
 de estado, buffer circular, watchdog, tratamento de falha, gravação em flash e,
 como ponto final, um **bootloader**.
 
 O que segura tudo junto é um produto: um módulo de carroceria automotivo (*body
 control module*) escrito do zero para um **STM32F446RE**, sem HAL e sem código
-gerado — só registradores, linker script e libopencm3 como camada fina.
+gerado, só registradores, linker script e libopencm3 como camada fina.
 
 O produto não é decoração. Estudar um protocolo isolado ensina a chamar a função;
 estudá-lo dentro de um sistema que já tem outras seis coisas rodando ensina o que
 ele custa. É a diferença entre saber configurar o SPI e descobrir que abandonar
 uma leitura no meio deixa o cartão travado até perder a alimentação.
 
-A especificação completa — 10 funções, 5 restrições e as etapas — está em
+A especificação completa, 10 funções, 5 restrições e as etapas, está em
 **[DIRETRIZES.md](DIRETRIZES.md)**.
 
 ![A bancada montada](docs/bancada.jpg)
 
 À esquerda a **NUCLEO-F446RE**, o módulo. No meio, a perfboard do BCM: cartão SD
-por SPI, as duas setas e o farol de trabalho. À direita, o **veículo simulado** —
+por SPI, as duas setas e o farol de trabalho. À direita, o **veículo simulado**,
 um Arduino Nano com MCP2515 e três botões, fazendo o papel do painel.
 
 Os dois fios verdes entre as placas são o **barramento CAN**. É por eles que
-apertar um botão da direita acende uma seta da esquerda — e é o único caminho
+apertar um botão da direita acende uma seta da esquerda, e é o único caminho
 entre os dois lados: nenhum sinal atravessa por fora do barramento.
 
 ## O que foi estudado, e onde mora
@@ -42,70 +42,45 @@ entre os dois lados: nenhum sinal atravessa por fora do barramento.
 | **Watchdog e falha** | `hal/watchdog`, `hal/fault_handler` | IWDG, `HardFault`, sete causas de reset distinguidas |
 | **Diagnóstico** | `logic/fault_table`, `app/diagnostics` | tabela de falhas com histórico, do jeito que um técnico lê |
 | **Sistema de arquivos** | `app/lib/ff16` | FatFs sobre o cartão, gravando log em arquivo |
-| **Bootloader** | *próxima e última etapa* | receber firmware pela serial, validar e voltar atrás se falhar |
+| **Bootloader** | `bootloader/`, linker próprio | dois programas no mesmo chip: o setor 0 dá a partida na aplicação em 0x08004000, via VTOR, stack pointer e salto |
 
 ## A restrição que define a arquitetura
 
-> **R4** — Nenhuma função pode atrasar outra. A seta não pode hesitar porque a
+> **R4**: Nenhuma função pode atrasar outra. A seta não pode hesitar porque a
 > rampa do farol está rodando. Nada de espera bloqueante.
 
 Isso proíbe `delay` em qualquer lugar do firmware, e é o motivo de tudo aqui ser
 máquina de estados alimentada por uma base de tempo comum. Não é preferência de
-estilo — é consequência direta de um requisito.
+estilo, e sim consequência direta de um requisito.
 
 O cliente é fictício: **Aurora Implementos**, uma encarroçadora que precisa de um
 módulo próprio para tudo que ela acrescenta ao chassi. O problema, esse, é real:
 encarroçadoras desenvolvem módulos assim, e é um nicho onde firmware embarcado é
-contratado no Brasil. O cliente existe para os requisitos terem dente — é ele que
+contratado no Brasil. O cliente existe para os requisitos terem dente, é ele que
 proíbe o `delay`, não o gosto do autor.
 
 ## Progresso
 
-O projeto foi revisto e **fecha na etapa 11, o bootloader**. As etapas 12 e 13 do
-plano original — integração contínua e PCB própria — saíram do escopo; o
-[DIRETRIZES.md](DIRETRIZES.md) preserva o plano como foi concebido.
+O projeto está **encerrado e completo dentro do seu escopo**. As etapas 12 e 13 do
+plano original, integração contínua e PCB própria, ficaram fora do escopo desta versão; o
+[DIRETRIZES.md](DIRETRIZES.md) preserva o plano completo como foi concebido.
 
 | # | Etapa | Funções | Status |
 |---|---|---|:---:|
-| 01 | Uma seta que pisca | — | ✅ |
+| 01 | Uma seta que pisca | - | ✅ |
 | 02 | Piscar na frequência certa | `F1` | ✅ |
 | 03 | Alavanca de seta e pisca-alerta | `F2` `R4` | ✅ |
 | 04 | Faróis com brilho e rampa | `F3` | ✅ |
 | 05 | Console de diagnóstico | `F8` | ✅ |
-| 06 | Medir bateria e lâmpada queimada | `F5` `F6` | 🟡 |
-| 07 | Falhas registradas | `R5` | 🟡 |
-| 08 | Sobreviver ao mundo real | `R2` `R3` | 🟡 |
-| 09 | Configuração não volátil | `F9` | 🟡 |
-| 10 | Entrar no barramento CAN | `F7` | 🟡 |
-| 11 | Atualizar sem tirar do veículo | `F10` | ⬜ |
+| 06 | Medir bateria e lâmpada queimada | `F5` `F6` | ✅ |
+| 07 | Falhas registradas | `R5` | ✅ |
+| 08 | Sobreviver ao mundo real | `R2` `R3` | ✅ |
+| 09 | Configuração não volátil | `F9` | ✅ |
+| 10 | Reagir ao barramento CAN | `F7` | ✅ |
+| 11 | Bootloader: dar a partida na aplicação | `F10` | ✅ |
 
-🟡 = em andamento. Fora das etapas, como base para o registro de falhas: cartão
-SD por SPI com FatFs, e o desenho das duas placas em KiCad, em `hardware/`.
-
-### O que falta em cada uma das amarelas
-
-**06** — a `F5` está entregue: o módulo mede a corrente da saída pelo shunt e sabe
-dizer que a lâmpada abriu. A `F6` está pela metade: mede a tensão e registra
-bateria baixa, mas o requisito também pede entrar em modo de proteção.
-
-**07** — a tabela de códigos está de pé e o console lê. Falta publicar as falhas
-no barramento, que é o que fecha o ciclo do diagnóstico remoto.
-
-**08** — watchdog, tratador de `HardFault` e causa de reset estão prontos, e o
-laço principal dorme em `wfi`. Falta o modo de baixo consumo de verdade, com o
-módulo acordando por porta aberta ou por atividade no barramento.
-
-**09** — o mecanismo está completo: parâmetro configurável pelo console, gravado
-em setor próprio da flash e validado por assinatura. Falta estender aos demais
-parâmetros, e o apagamento de setor ainda conflita com o período do watchdog.
-
-**10** — o módulo recebe comandos do barramento e as setas respondem a eles. Falta
-a outra metade da `F7`: publicar o estado do módulo periodicamente.
-
-Falta ainda, das etapas já fechadas: a alavanca de três posições ainda é botão, a
-entrada é por varredura e não por interrupção `EXTI`, a frequência do pisca não
-foi medida com analisador lógico — só conferida a olho — e a leitura do ADC ainda
-espera o fim da conversão num laço, que é o tipo de espera que a `R4` proíbe.
+Fora das etapas, como base para o registro de falhas: cartão SD por SPI com FatFs,
+e o desenho das duas placas em KiCad, em `hardware/`.
 
 ## Hardware e ferramentas
 
@@ -122,7 +97,7 @@ espera o fim da conversão num laço, que é o tipo de espera que a `R4` proíbe
 | Sistema de arquivos | [FatFs](http://elm-chan.org/fsw/ff/) R0.16, em `app/lib/ff16` |
 | Gravação/debug | OpenOCD 0.12 + Cortex-Debug no VS Code |
 
-Todo o toolchain do ARM vem embutido no STM32CubeIDE — nada instalado à parte. O
+Todo o toolchain do ARM vem embutido no STM32CubeIDE, nada instalado à parte. O
 firmware do Nano usa PlatformIO, em projeto separado. Os caminhos estão no
 [CLAUDE.md](CLAUDE.md).
 
@@ -157,11 +132,11 @@ vehicle/                     firmware do Arduino Nano, o segundo nó do CAN
 
 Cada módulo é uma pasta com as duas metades juntas, e o nome do arquivo diz de
 que camada ele é: `hal/uart/driver.c`, `logic/turn_signal/core.c`,
-`app/terminal/service.c`. É a frase que rege a arquitetura — *núcleo puro, casca
-imperativa* — virando nome de arquivo. Header sem `.c` nenhum fica solto, porque
+`app/terminal/service.c`. É a frase que rege a arquitetura, *núcleo puro, casca
+imperativa*, virando nome de arquivo. Header sem `.c` nenhum fica solto, porque
 pasta com um arquivo só não organiza nada.
 
-`logic/` não conhece hardware — nem por header. Quem lê o pino é o `hal/`, quem
+`logic/` não conhece hardware, nem por header. Quem lê o pino é o `hal/`, quem
 decide é o `logic/`, e o `main.c` liga os dois. A camada `app/` fica acima das
 duas e cuida do que é política de produto: a tabela de comandos do console, e a
 decisão de que um diagnóstico virou falha registrada.
@@ -199,7 +174,7 @@ git clone --recursive https://github.com/aluisioalves123/aurora-bcm.git
 
 As setas e o pisca-alerta respondem a mensagens do barramento CAN; a luz de
 serviço continua num botão da própria placa. Em paralelo, o farol de trabalho
-sobe e desce em rampa de 400 ms — tudo ao mesmo tempo, cada coisa na sua máquina
+sobe e desce em rampa de 400 ms, tudo ao mesmo tempo, cada coisa na sua máquina
 de estados, sem uma atrasar a outra.
 
 | Estado | Esquerdo | Direito |
@@ -209,7 +184,7 @@ de estados, sem uma atrasar a outra.
 | `SIGNAL_LEFT` | pisca | aceso |
 | `SIGNAL_HAZARD` | pisca | pisca |
 
-O farol usa TIM2 canal 3 no PB10 (AF1), `PSC = 224` e `ARR = 399` — 1 kHz de PWM
+O farol usa TIM2 canal 3 no PB10 (AF1), `PSC = 224` e `ARR = 399`, 1 kHz de PWM
 a 180 MHz. A cada systick o `CCR3` anda um passo, então percorrer os 400 níveis
 leva exatamente os 400 ms que a `F3` pede, nos dois sentidos.
 
@@ -217,7 +192,7 @@ leva exatamente os 400 ms que a `F3` pede, nos dois sentidos.
 
 Pela mesma USB da gravação, a 115200 8N1, sem hardware extra. A recepção é por
 interrupção: cada byte cai num buffer circular, o laço principal tira um por vez e
-monta a frase, e a mensagem só sobe quando chega `CR` ou `LF` — nada disso espera
+monta a frase, e a mensagem só sobe quando chega `CR` ou `LF`, nada disso espera
 por nada. A transmissão também é por interrupção: `print_serial` enfileira e volta
 na hora, independente do tamanho do texto.
 
@@ -271,7 +246,7 @@ diagnóstico alternava sozinho entre `OK` e `OPEN`.
 ### Configuração que sobrevive ao desligamento
 
 O limiar de temperatura era um `#define`. Hoje mora numa struct lida da flash no
-boot, em setor próprio, protegida por assinatura — flash virgem devolve os padrões
+boot, em setor próprio, protegida por assinatura, flash virgem devolve os padrões
 em vez de lixo. O técnico ajusta pelo console em graus, que é como ele pensa:
 
 ```
@@ -296,7 +271,7 @@ passou a reportar sucesso sem que uma linha dele mudasse.
 ### Cartão SD por SPI, com sistema de arquivos
 
 O SPI2 começa em 351 kHz porque o cartão só aceita entre 100 e 400 kHz enquanto
-inicializa, e sobe depois. Os comandos moram numa tabela, não numa função cada — o
+inicializa, e sobe depois. Os comandos moram numa tabela, não numa função cada, o
 enum é o índice, e a tabela guarda o quadro de 6 bytes junto com quantos bytes de
 resposta estendida aquele comando devolve:
 
@@ -313,7 +288,8 @@ As etapas 01 a 04 foram construídas acompanhando a
 [Bare Metal Programming Series](https://github.com/lowbyteproductions/bare-metal-series)
 da Low Byte Productions, num
 [repositório separado](https://github.com/aluisioalves123/bare-metal-stm32f446re).
-Os dois divergiram no meio do caminho — o curso seguiu direto para o bootloader,
+Os dois divergiram no meio do caminho, o curso seguiu direto para o bootloader,
 este projeto deu a volta pelo console, pelos diagnósticos e pelos barramentos.
 
-Agora voltam a se encontrar: o bootloader é também o ponto final daqui.
+Agora voltam a se encontrar: o bootloader é o ponto final daqui também, construído
+até o handover que dá a partida na aplicação.
