@@ -61,9 +61,16 @@ bool i2c_write_with_timeout(uint32_t i2c, int i2c_address, const uint8_t *data, 
 
 	/* Waiting for address is transferred. */
   started_waiting = get_ticks();
-	while (!(I2C_SR1(i2c) & I2C_SR1_ADDR)) {
+	while (!(I2C_SR1(i2c) & (I2C_SR1_ADDR | I2C_SR1_AF))) {
     if (get_ticks() - started_waiting >= I2C_TIMEOUT) return false;
   };
+
+  /* NACK e resposta, nao falha de barramento: limpa, encerra e volta. */
+  if (I2C_SR1(i2c) & I2C_SR1_AF) {
+    I2C_SR1(i2c) &= ~I2C_SR1_AF;
+    i2c_send_stop(i2c);
+    return false;
+  }
 
 	/* Clearing ADDR condition sequence. */
 	(void)I2C_SR2(i2c);
@@ -95,9 +102,16 @@ bool i2c_read_with_timeout(uint32_t i2c, int i2c_address, uint8_t *response, siz
 
 	/* Waiting for address is transferred. */
   started_waiting = get_ticks();
-	while (!(I2C_SR1(i2c) & I2C_SR1_ADDR)) {
+	while (!(I2C_SR1(i2c) & (I2C_SR1_ADDR | I2C_SR1_AF))) {
     if (get_ticks() - started_waiting >= I2C_TIMEOUT) return false;
   };
+
+  /* NACK e resposta, nao falha de barramento: limpa, encerra e volta. */
+  if (I2C_SR1(i2c) & I2C_SR1_AF) {
+    I2C_SR1(i2c) &= ~I2C_SR1_AF;
+    i2c_send_stop(i2c);
+    return false;
+  }
 	/* Clearing ADDR condition sequence. */
 	(void)I2C_SR2(i2c);
 
