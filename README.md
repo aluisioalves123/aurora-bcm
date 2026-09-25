@@ -109,7 +109,10 @@ app/src/
 ├── board.h                  mapa do hardware: o único lugar com pinos
 ├── version.h                versão do firmware, reportada pelo console
 ├── app/                     política de produto: junta hal e logic
-│   ├── terminal/            service.c + service.h
+│   ├── terminal/            service.c + service.h  o despachante e a tabela
+│   │                        commands.h             os tipos e as declarações
+│   │                        readings.c faults.c    um arquivo por assunto,
+│   │                        storage.c config.c     para nenhum passar de 150 linhas
 │   ├── diagnostics/         service.c + service.h
 │   └── config/              service.c + service.h
 ├── hal/                     fala com o hardware (driver.c + driver.h)
@@ -199,19 +202,25 @@ na hora, independente do tamanho do texto.
 | Comando | O que responde |
 |---|---|
 | `/help` | a lista de comandos |
-| `/hello` | `hello world` |
 | `/status` | versão, uptime, motivo do último reset, seta, lâmpada, bateria, temperatura e bytes perdidos |
-| `/adc_val` | leitura crua do canal do shunt |
 | `/battery_val` | tensão da bateria, em volts |
-| `/shunt_current` | corrente pelo shunt, em miliampères |
 | `/lamp_status` | diagnóstico da lâmpada da seta direita |
-| `/temperature_raw` | valor cru do LM75, em decimal e hexadecimal |
 | `/temperature` | temperatura em graus Celsius |
 | `/fault_list` | os tipos de falha que podem ser consultados |
 | `/fault <tipo>` | estado de uma falha: ativa, ocorrências e quando |
 | `/log` | acrescenta uma linha em `log.txt` no cartão |
 | `/log_read` | mostra o conteúdo de `log.txt` |
 | `/config <nome> <valor>` | grava uma configuração na flash |
+
+Essa tabela não é escrita à mão duas vezes. Os comandos moram numa tabela no
+código, e o `/help` se imprime a partir dela, então acrescentar um comando é uma
+linha e a ajuda acompanha sozinha.
+
+Isso só foi possível depois que todos passaram a ter a mesma assinatura: um
+`console_t` carrega o que qualquer comando possa precisar do resto do firmware,
+e quem não usa nada também recebe. Antes eram seis assinaturas diferentes, e uma
+tabela não guarda ponteiros para funções de tipos diferentes, daí a escada de
+`if`/`else` que existia no lugar.
 
 Byte que chega com o buffer cheio não some calado: vira contador, e o `/status`
 mostra. Perder pode acontecer; perder em silêncio, não.
